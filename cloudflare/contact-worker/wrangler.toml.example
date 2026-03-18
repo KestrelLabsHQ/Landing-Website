@@ -1,6 +1,7 @@
 name = "kestrel-contact-worker"
 main = "worker.js"
 compatibility_date = "2026-03-17"
+account_id = "be4da42019790cca0a0975c032318986"
 
 [vars]
 ALLOWED_ORIGINS = "https://kestrellabshq.com,https://www.kestrellabshq.com"
