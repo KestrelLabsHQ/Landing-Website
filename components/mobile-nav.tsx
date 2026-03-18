@@ -22,8 +22,9 @@ export function MobileNav() {
 
       {open ? (
         <div className="fixed inset-0 z-50 bg-white">
-          <div className="flex min-h-full flex-col bg-[linear-gradient(rgba(10,10,10,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(10,10,10,0.05)_1px,transparent_1px)] bg-[size:48px_48px]">
-            <div className="flex items-center justify-between border-b border-black/10 bg-white/90 px-5 py-4 backdrop-blur-sm">
+          <div className="flex min-h-full flex-col bg-white">
+            <div className="pointer-events-none absolute inset-0 opacity-60 bg-[linear-gradient(rgba(10,10,10,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(10,10,10,0.05)_1px,transparent_1px)] bg-[size:48px_48px]" />
+            <div className="relative flex items-center justify-between border-b border-black/10 bg-white px-5 py-4">
               <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.22em] text-black">
                 <BrandMark className="h-9 w-9 shrink-0" />
                 <span>Kestrel Labs</span>
@@ -37,7 +38,7 @@ export function MobileNav() {
               </button>
             </div>
 
-            <div className="px-5 pb-6 pt-8">
+            <div className="relative flex-1 bg-white px-5 pb-6 pt-8">
               <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-black/45">
                 Navigation
               </p>
@@ -60,7 +61,7 @@ export function MobileNav() {
               </nav>
             </div>
 
-            <div className="mt-auto border-t border-black/10 bg-white/92 px-5 py-5 backdrop-blur-sm">
+            <div className="relative mt-auto border-t border-black/10 bg-white px-5 py-5">
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
