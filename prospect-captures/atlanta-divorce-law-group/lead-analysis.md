@@ -53,17 +53,13 @@
 
 ### Full-page desktop view
 - Evidence file: `evidence/00-fullpage-desktop-homepage.png`
-
-![ADLG full-page desktop homepage](evidence/00-fullpage-desktop-homepage.png)
-
+- View source image: [00-fullpage-desktop-homepage.png](evidence/00-fullpage-desktop-homepage.png)
 - Why it matters:
   - This gives a complete top-to-bottom view of the desktop information architecture, pacing, and content volume.
 
 ### Full-page mobile view
 - Evidence file: `evidence/00-fullpage-mobile-homepage.png`
-
-![ADLG full-page mobile homepage](evidence/00-fullpage-mobile-homepage.png)
-
+- View source image: [00-fullpage-mobile-homepage.png](evidence/00-fullpage-mobile-homepage.png)
 - Why it matters:
   - This shows the true mobile scroll length and how dense the page becomes when all homepage modules stack vertically.
 
