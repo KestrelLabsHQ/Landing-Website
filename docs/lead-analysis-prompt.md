@@ -188,6 +188,14 @@ Use this baseline unless there is a specific reason to do otherwise:
 - desktop viewport: `1920x1080`
 - mobile viewport: iPhone-class mobile viewport (roughly `390x844`)
 
+Capture the site as it exists live.
+Do **not** inject style overrides, layout fixes, or cosmetic cleanup during normal capture.
+If a technical bug prevents faithful capture and an override/workaround is necessary:
+- keep the intervention as narrow as possible
+- say explicitly that a workaround was used
+- explain why it was necessary
+- treat that capture as lower-confidence than a clean raw capture
+
 In every final markdown report, include:
 - one full-page desktop screenshot
 - one full-page mobile screenshot

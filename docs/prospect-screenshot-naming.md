@@ -120,5 +120,14 @@ Recommended baseline:
 
 The goal is to inspect the site in a realistic desktop context before making judgments about hierarchy, clutter, rhythm, or polish.
 
+## Raw capture rule
+Default to raw/live screenshots.
+Do not apply CSS injections, layout normalization, width constraints, or visual cleanup during capture unless a technical issue makes faithful capture impossible.
+
+If a workaround is ever required:
+- document it in the report
+- keep the rawest possible version available
+- note that the image may be slightly less faithful than a clean capture
+
 ## Notes
 The point is not volume. A small set of sharp evidence is more convincing than dumping ten generic full-page screenshots.
