@@ -1,0 +1,75 @@
+{
+  "sitemapSource": "https://www.viningsfamilydentistry.com/sitemap.xml",
+  "selectedPages": [
+    {
+      "key": "home",
+      "url": "https://www.viningsfamilydentistry.com/",
+      "label": "Homepage"
+    },
+    {
+      "key": "service",
+      "url": "https://www.viningsfamilydentistry.com/bonding-and-white-fillings",
+      "label": "Primary service page"
+    },
+    {
+      "key": "about",
+      "url": "https://www.viningsfamilydentistry.com/about-us",
+      "label": "About / practice page"
+    },
+    {
+      "key": "appointment",
+      "url": "https://www.viningsfamilydentistry.com/appointment",
+      "label": "Appointment page"
+    }
+  ],
+  "captureSummary": {
+    "selectedPages": [
+      {
+        "key": "home",
+        "url": "https://www.viningsfamilydentistry.com/",
+        "title": "Atlanta, GA Dentist"
+      },
+      {
+        "key": "service",
+        "url": "https://www.viningsfamilydentistry.com/bonding-and-white-fillings",
+        "title": "Atlanta, GA Dentist"
+      },
+      {
+        "key": "about",
+        "url": "https://www.viningsfamilydentistry.com/about-us",
+        "title": "Atlanta, GA Dentist"
+      },
+      {
+        "key": "appointment",
+        "url": "https://www.viningsfamilydentistry.com/appointment",
+        "title": "Atlanta, GA Dentist"
+      }
+    ],
+    "desktopFallbacks": [
+      {
+        "page": "home",
+        "path": "headed-fallback",
+        "title": "Atlanta, GA Dentist",
+        "url": "https://www.viningsfamilydentistry.com/"
+      },
+      {
+        "page": "service",
+        "path": "headed-fallback",
+        "title": "Atlanta, GA Dentist",
+        "url": "https://www.viningsfamilydentistry.com/bonding-and-white-fillings"
+      },
+      {
+        "page": "about",
+        "path": "headed-fallback",
+        "title": "Atlanta, GA Dentist",
+        "url": "https://www.viningsfamilydentistry.com/about-us"
+      },
+      {
+        "page": "appointment",
+        "path": "headed-fallback",
+        "title": "Atlanta, GA Dentist",
+        "url": "https://www.viningsfamilydentistry.com/appointment"
+      }
+    ]
+  }
+}
