@@ -16,13 +16,13 @@ export default function ServicesPage() {
     >
       <div className="grid gap-px border border-black/10 bg-black/10 lg:grid-cols-2">
         {servicesPage.map((service) => (
-          <article key={service.title} className="bg-white p-6 sm:p-7 md:p-9">
+          <article key={service.title} className="grid bg-white p-6 sm:p-7 md:p-9 lg:grid-rows-[auto_auto_1fr_auto]">
             <h2 className="max-w-[16ch] text-2xl font-semibold tracking-[-0.04em] sm:text-[2rem] md:text-3xl">
               {service.title}
             </h2>
             <p className="mt-5 max-w-2xl text-sm leading-7 text-black/68">{service.description}</p>
 
-            <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-x-12">
+            <div className="mt-8 grid content-start gap-8 lg:grid-cols-2 lg:gap-x-12">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-xs sm:tracking-[0.24em]">What it helps with</p>
                 <ul className="mt-3 space-y-2 text-sm leading-6 text-black/78">
@@ -37,7 +37,7 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            <div className="mt-8 max-w-xl">
+            <div className="mt-8 max-w-xl self-end">
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-xs sm:tracking-[0.24em]">Outcome</p>
               <p className="mt-3 text-sm leading-7 text-black/78">{service.outcome}</p>
             </div>
