@@ -54,7 +54,7 @@
 ### Full-page desktop view
 - Evidence file: `evidence/00-fullpage-desktop-homepage.png`
 
-<img src="evidence/00-fullpage-desktop-homepage.png" alt="ADLG full-page desktop homepage" width="900">
+![ADLG full-page desktop homepage](evidence/00-fullpage-desktop-homepage.png)
 
 - Why it matters:
   - This gives a complete top-to-bottom view of the desktop information architecture, pacing, and content volume.
@@ -62,7 +62,7 @@
 ### Full-page mobile view
 - Evidence file: `evidence/00-fullpage-mobile-homepage.png`
 
-<img src="evidence/00-fullpage-mobile-homepage.png" alt="ADLG full-page mobile homepage" width="420">
+![ADLG full-page mobile homepage](evidence/00-fullpage-mobile-homepage.png)
 
 - Why it matters:
   - This shows the true mobile scroll length and how dense the page becomes when all homepage modules stack vertically.
@@ -70,7 +70,7 @@
 ### First impression / hero
 - Evidence file: `evidence/01-hero-first-impression.png`
 
-<img src="evidence/01-hero-first-impression.png" alt="ADLG hero first impression" width="900">
+![ADLG hero first impression](evidence/01-hero-first-impression.png)
 
 - What it shows:
   - A homepage opening that immediately combines video/media, multiple calls to action, and a content-heavy transition into the rest of the page.
@@ -82,7 +82,7 @@
 ### Trust / credibility signal
 - Evidence file: `evidence/02-trust-team-and-testimonials.png`
 
-<img src="evidence/02-trust-team-and-testimonials.png" alt="ADLG trust section showing team and testimonials" width="900">
+![ADLG trust section showing team and testimonials](evidence/02-trust-team-and-testimonials.png)
 
 - What it shows:
   - Strong proof-of-scale material: visible team depth, social proof, and signs of a sizable operation.
@@ -94,7 +94,7 @@
 ### Weakness / UX issue #1
 - Evidence file: `evidence/03-issue-busy-homepage-rhythm.png`
 
-<img src="evidence/03-issue-busy-homepage-rhythm.png" alt="ADLG busy homepage rhythm issue" width="900">
+![ADLG busy homepage rhythm issue](evidence/03-issue-busy-homepage-rhythm.png)
 
 - What it shows:
   - A stacked sequence of sections that keeps shifting topic and format: legal service framing, support content, resource/media elements, and promotional modules.
@@ -106,7 +106,7 @@
 ### Weakness / UX issue #2
 - Evidence file: `evidence/04-bug-video-fallback-state.png`
 
-<img src="evidence/04-bug-video-fallback-state.png" alt="ADLG video fallback state issue" width="900">
+![ADLG video fallback state issue](evidence/04-bug-video-fallback-state.png)
 
 - What it shows:
   - The visible “Your browser does not support the video tag” fallback state surfaced during rendered inspection.
@@ -118,7 +118,7 @@
 ### CTA / consultation section
 - Evidence file: `evidence/05-cta-consultation-section.png`
 
-<img src="evidence/05-cta-consultation-section.png" alt="ADLG consultation CTA section" width="900">
+![ADLG consultation CTA section](evidence/05-cta-consultation-section.png)
 
 - What it shows:
   - A clear consultation-oriented conversion area near the lower portion of the page.
@@ -130,7 +130,7 @@
 ### Mobile first impression
 - Evidence file: `evidence/07-mobile-first-impression.png`
 
-<img src="evidence/07-mobile-first-impression.png" alt="ADLG mobile first impression" width="420">
+![ADLG mobile first impression](evidence/07-mobile-first-impression.png)
 
 - What it shows:
   - The mobile opening compresses the site’s already busy hierarchy into a narrow vertical experience.
@@ -142,7 +142,7 @@
 ### Mobile density / long-scroll issue
 - Evidence file: `evidence/09-mobile-long-scroll-density.png`
 
-<img src="evidence/09-mobile-long-scroll-density.png" alt="ADLG mobile long scroll density issue" width="420">
+![ADLG mobile long scroll density issue](evidence/09-mobile-long-scroll-density.png)
 
 - What it shows:
   - Long vertical stacking of many content types, with repeated transitions between service framing, media, trust, and promotional material.
@@ -154,7 +154,7 @@
 ### Mobile CTA / contact flow
 - Evidence file: `evidence/08-mobile-cta-and-contact-flow.png`
 
-<img src="evidence/08-mobile-cta-and-contact-flow.png" alt="ADLG mobile CTA and contact flow" width="420">
+![ADLG mobile CTA and contact flow](evidence/08-mobile-cta-and-contact-flow.png)
 
 - What it shows:
   - The mobile consultation/contact area exists, but it arrives after a long content journey.
