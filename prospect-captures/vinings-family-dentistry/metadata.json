@@ -1,0 +1,22 @@
+{
+  "sourceUrl": "https://viningsfamilydentistry.com",
+  "slug": "vinings-family-dentistry",
+  "capturedAt": "2026-03-18T22:02:29.876Z",
+  "captureFidelity": "raw-live",
+  "viewport": {
+    "desktop": "1920x1080",
+    "mobile": "390x844"
+  },
+  "evidence": [
+    "00-fullpage-desktop-homepage.png",
+    "00-fullpage-mobile-homepage.png",
+    "01-hero-first-impression.png",
+    "02-trust-proof-section.png",
+    "03-issue-homepage-rhythm.png",
+    "04-issue-cta-or-contact-friction.png",
+    "05-cta-contact-section.png",
+    "06-mobile-first-impression.png",
+    "07-mobile-density-or-rhythm.png",
+    "08-mobile-cta-and-contact-flow.png"
+  ]
+}
