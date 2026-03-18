@@ -183,8 +183,15 @@ Capture and reference screenshots of:
 - at least one example of a suggested improvement opportunity
 - at least one mobile-specific evidence screenshot when mobile analysis is relevant
 
-Prefer a maximized or effectively fullscreen desktop browser pass during analysis.
-If true fullscreen is unavailable, use a large desktop viewport that approximates fullscreen review.
+Prefer a representative default browser viewport during analysis rather than a small or narrow window.
+Use this baseline unless there is a specific reason to do otherwise:
+- desktop viewport: `1920x1080`
+- mobile viewport: iPhone-class mobile viewport (roughly `390x844`)
+
+In every final markdown report, include:
+- one full-page desktop screenshot
+- one full-page mobile screenshot
+- targeted evidence screenshots for specific strengths, issues, bugs, and CTA/contact findings
 
 In the final markdown report:
 - embed images directly in the report

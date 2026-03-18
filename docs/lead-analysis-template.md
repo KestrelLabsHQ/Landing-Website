@@ -46,11 +46,31 @@ Use this template when writing a prospect review that includes screenshot eviden
 > - desktop screenshots: `width="900"`
 > - mobile screenshots: `width="420"`
 >
+> Standard capture baseline:
+> - desktop viewport: `1920x1080`
+> - mobile viewport: iPhone-class viewport (roughly `390x844`)
+>
 > Example:
 >
 > ```html
 > <img src="evidence/01-hero-first-impression.png" alt="Hero first impression" width="900">
 > ```
+
+### Full-page desktop view
+- Evidence file: `evidence/00-fullpage-desktop-homepage.png`
+- Embedded image:
+
+<img src="evidence/00-fullpage-desktop-homepage.png" alt="Full-page desktop homepage" width="900">
+
+- Why it matters:
+
+### Full-page mobile view
+- Evidence file: `evidence/00-fullpage-mobile-homepage.png`
+- Embedded image:
+
+<img src="evidence/00-fullpage-mobile-homepage.png" alt="Full-page mobile homepage" width="420">
+
+- Why it matters:
 
 ### First impression / hero
 - Evidence file: `evidence/01-hero-first-impression.png`

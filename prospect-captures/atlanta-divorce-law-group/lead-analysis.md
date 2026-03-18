@@ -19,8 +19,8 @@
 
 - **Mode:** Primarily **rendered-page/browser inspection** of the live site, plus text extraction from the public homepage.
 - **Tools used:** OpenClaw browser tool, rendered screenshots, web fetch, targeted Playwright evidence capture.
-- **Desktop review standard:** Large desktop viewport approximating a maximized/fullscreen browsing context.
-- **Mobile review standard:** Phone-sized viewport with a separate mobile pass and dedicated screenshots.
+- **Desktop review standard:** Representative desktop browser viewport at **1920x1080**.
+- **Mobile review standard:** iPhone-class mobile viewport at roughly **390x844** with a separate mobile pass and dedicated screenshots.
 - **Confidence:** **Moderate**
 - **Limits:**
   - I was able to inspect the real rendered site experience.
@@ -49,6 +49,22 @@
 - My read is that the firm itself is likely more operationally mature and premium than the website fully communicates.
 
 ## 4. Evidence Gallery
+
+### Full-page desktop view
+- Evidence file: `evidence/00-fullpage-desktop-homepage.png`
+
+<img src="evidence/00-fullpage-desktop-homepage.png" alt="ADLG full-page desktop homepage" width="900">
+
+- Why it matters:
+  - This gives a complete top-to-bottom view of the desktop information architecture, pacing, and content volume.
+
+### Full-page mobile view
+- Evidence file: `evidence/00-fullpage-mobile-homepage.png`
+
+<img src="evidence/00-fullpage-mobile-homepage.png" alt="ADLG full-page mobile homepage" width="420">
+
+- Why it matters:
+  - This shows the true mobile scroll length and how dense the page becomes when all homepage modules stack vertically.
 
 ### First impression / hero
 - Evidence file: `evidence/01-hero-first-impression.png`

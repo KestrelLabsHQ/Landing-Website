@@ -34,6 +34,7 @@ Where:
 - `short-label` = short human-readable description
 
 ## Recommended categories
+- `fullpage`
 - `hero`
 - `trust`
 - `issue`
@@ -44,6 +45,8 @@ Where:
 - `comparison`
 
 ## Example filenames
+- `00-fullpage-desktop-homepage.png`
+- `00-fullpage-mobile-homepage.png`
 - `01-hero-first-impression.png`
 - `02-trust-team-depth.png`
 - `03-issue-busy-homepage-rhythm.png`
@@ -78,11 +81,13 @@ Every screenshot included in a report should:
 
 ## Minimum evidence set per lead
 Aim for at least:
+- 1 full-page desktop screenshot
+- 1 full-page mobile screenshot
 - 1 hero screenshot
 - 1 trust/credibility screenshot
 - 1-2 issue screenshots
 - 1 CTA or contact-flow screenshot
-- 1 mobile screenshot when mobile issues are relevant
+- 1 additional mobile screenshot when mobile issues are relevant
 
 ## Suggested markdown reference style
 
@@ -107,13 +112,13 @@ Also keep a plain filename reference near the image for quick source lookup:
 ```
 
 ## Viewport / fullscreen standard
-For desktop analysis, use a maximized or effectively fullscreen browser state as the standard capture mode.
-If true fullscreen is not practical in the tool chain, use a large desktop viewport that approximates fullscreen review.
+For desktop analysis, use a representative browser viewport rather than a small or narrow window.
+True fullscreen is optional; representativeness is what matters.
 Recommended baseline:
-- desktop analysis viewport: around 1440–1600px wide
-- mobile analysis viewport: around 390px wide
+- desktop analysis viewport: `1920x1080`
+- mobile analysis viewport: around `390x844` (iPhone-class)
 
-The goal is to inspect the site in a realistic, roomy desktop context before making judgments about hierarchy, clutter, rhythm, or polish.
+The goal is to inspect the site in a realistic desktop context before making judgments about hierarchy, clutter, rhythm, or polish.
 
 ## Notes
 The point is not volume. A small set of sharp evidence is more convincing than dumping ten generic full-page screenshots.
