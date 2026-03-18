@@ -3,6 +3,10 @@ main = "worker.js"
 compatibility_date = "2026-03-17"
 account_id = "be4da42019790cca0a0975c032318986"
 
+routes = [
+  { pattern = "contact.kestrellabshq.com", zone_name = "kestrellabshq.com", custom_domain = true }
+]
+
 [vars]
 ALLOWED_ORIGINS = "https://kestrellabshq.com,https://www.kestrellabshq.com"
 MAIL_TO = "contact@kestrellabshq.com"
