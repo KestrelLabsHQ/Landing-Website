@@ -18,13 +18,13 @@
 ## 2. Analysis Mode / Confidence
 
 - **Mode:** Primarily **rendered-page/browser inspection** of the live site, plus text extraction from the public homepage.
-- **Tools used:** OpenClaw browser tool, rendered screenshots, web fetch.
+- **Tools used:** OpenClaw browser tool, rendered screenshots, web fetch, targeted Playwright evidence capture.
 - **Confidence:** **Moderate**
 - **Limits:**
   - I was able to inspect the real rendered site experience.
-  - The local Playwright capture script failed on full-page screenshot for this site, so I used the browser tool instead.
-  - I could not enrich with external review/map data because `web_search` is not configured in this environment right now.
-  - So business-quality judgment is weighted more toward **onsite signals** than offsite reputation evidence.
+  - The original local Playwright full-page capture script failed on this site, so I used a more controlled targeted capture flow for evidence screenshots.
+  - I could not enrich with external review/map data because `web_search` was exposed but not properly configured in the current environment.
+  - Business-quality judgment is therefore weighted more toward **onsite signals** than offsite reputation evidence.
 
 ## 3. First Impression
 
@@ -46,49 +46,116 @@
 - **Yes.**
 - My read is that the firm itself is likely more operationally mature and premium than the website fully communicates.
 
-## 4. Required Experience Dimensions
+## 4. Evidence Gallery
+
+### First impression / hero
+- Evidence: `evidence/01-hero-first-impression.png`
+- What it shows:
+  - A homepage opening that immediately combines video/media, multiple calls to action, and a content-heavy transition into the rest of the page.
+- Why it matters:
+  - For a divorce/family-law prospect, the first impression should feel steadier and more composed. Instead, the opening feels more layered than calming.
+- Suggested improvement:
+  - Simplify the opening sequence, tighten the message hierarchy, and reduce competing visual inputs in the first screenful.
+
+### Trust / credibility signal
+- Evidence: `evidence/02-trust-team-and-testimonials.png`
+- What it shows:
+  - Strong proof-of-scale material: visible team depth, social proof, and signs of a sizable operation.
+- Why it matters:
+  - This is one of the clearest indications that the business itself is more mature than the site’s overall composure suggests.
+- Suggested improvement:
+  - Keep these trust assets, but integrate them into a calmer, more deliberate narrative flow.
+
+### Weakness / UX issue #1
+- Evidence: `evidence/03-issue-busy-homepage-rhythm.png`
+- What it shows:
+  - A stacked sequence of sections that keeps shifting topic and format: legal service framing, support content, resource/media elements, and promotional modules.
+- Why it matters:
+  - The page reads as **accumulation** rather than a guided trust journey. It adds cognitive load in a category where visitors are already under stress.
+- Suggested improvement:
+  - Reduce module count on the homepage, group related content more clearly, and build a stronger section rhythm from reassurance → authority → next step.
+
+### Weakness / UX issue #2
+- Evidence: `evidence/04-bug-video-fallback-state.png`
+- What it shows:
+  - The visible “Your browser does not support the video tag” fallback state surfaced during rendered inspection.
+- Why it matters:
+  - Even if not every visitor sees it, this is the kind of rough edge that weakens polish and trust in a premium-trust category.
+- Suggested improvement:
+  - Replace with a controlled static fallback image/poster state and remove any raw fallback copy from the rendered experience.
+
+### CTA / consultation section
+- Evidence: `evidence/05-cta-consultation-section.png`
+- What it shows:
+  - A clear consultation-oriented conversion area near the lower portion of the page.
+- Why it matters:
+  - The site does have legitimate conversion intent and knows it needs to move visitors toward contact.
+- Suggested improvement:
+  - Make the path to consultation feel more direct earlier in the experience, with less narrative clutter before the user gets there.
+
+### Mobile impression
+- Evidence: `evidence/06-mobile-density-problem.png`
+- What it shows:
+  - On mobile, the page density and section stacking become more noticeable, with long vertical flow and multiple competing content types.
+- Why it matters:
+  - Mobile visitors are especially vulnerable to overload; a trust-heavy service site should feel simpler, not denser, on a phone.
+- Suggested improvement:
+  - Reduce homepage length, tighten copy, and prioritize the most persuasive trust/CTA elements for mobile users.
+
+## 5. Required Experience Dimensions
 
 ### Visual composure
-
 - Mixed.
 - The site is not incompetent, but it does **not feel especially calm or controlled**.
 - There are many section changes, images, cards, modules, and content shifts competing for attention.
 - Overall feel: **busy / layered / somewhat uneven**, rather than disciplined and intentional.
+- Evidence:
+  - `evidence/01-hero-first-impression.png`
+  - `evidence/03-issue-busy-homepage-rhythm.png`
 
 ### Readability / contrast
-
 - Generally readable, but not especially elegant.
 - Body text appears legible enough.
 - The bigger issue is less literal contrast failure and more **density + pacing**.
 - Some sections feel like they ask for a lot of reading without enough visual quiet.
+- Evidence:
+  - `evidence/03-issue-busy-homepage-rhythm.png`
+  - `evidence/06-mobile-density-problem.png`
 
 ### Motion quality
-
 - There’s a video-heavy hero/media presence, and the page hints at a richer motion/media layer.
 - From the rendered pass, the motion/media choice feels more **marketing-ish than reassuring**.
 - Not obviously broken, but not especially refined either.
 - The “Your browser does not support the video tag” text surfacing in the rendered inspection is a mild quality blemish.
+- Evidence:
+  - `evidence/04-bug-video-fallback-state.png`
 
 ### Section rhythm / narrative flow
-
 - This is one of the bigger weaknesses.
 - The page doesn’t move with clean narrative economy.
 - It goes from hero → service framing → video/help content → brand concept → book → resources → podcast → team → testimonials → contact → newsletter → offices.
 - That reads as **stacked accumulation**, not a tightly guided trust journey.
+- Evidence:
+  - `evidence/03-issue-busy-homepage-rhythm.png`
+  - `evidence/06-mobile-density-problem.png`
 
 ### Premium / trust feel
-
 - The site does create trust through **volume of evidence**.
 - But it does **not feel as premium as the firm likely is**.
 - It feels more like a capable, content-heavy regional practice than a sharply positioned, high-trust premium legal brand.
+- Evidence:
+  - `evidence/02-trust-team-and-testimonials.png`
+  - `evidence/01-hero-first-impression.png`
 
 ### Calm vs. chaos
-
 - For a divorce/family-law firm, this matters a lot.
 - The site currently adds a bit of **cognitive load** where it should probably reduce it.
 - It’s not chaotic in a broken sense, but it is **too busy for a category where emotional steadiness is part of the product**.
+- Evidence:
+  - `evidence/03-issue-busy-homepage-rhythm.png`
+  - `evidence/06-mobile-density-problem.png`
 
-## 5. Website / Digital Findings
+## 6. Website / Digital Findings
 
 - The site appears to be **underselling the firm’s maturity**.
 - Messaging is understandable, but there’s too much of it competing at once.
@@ -100,7 +167,7 @@
 - The rendered experience suggests a **website credibility refresh opportunity**, not necessarily a full strategic rewrite from zero.
 - The site likely performs its basic job, but not with the level of composure that would best support premium trust conversion.
 
-## 6. Business Quality Signals
+## 7. Business Quality Signals
 
 ### Positive signals
 
@@ -122,7 +189,7 @@
 - Without maps/review enrichment, I’d avoid overstating reputation specifics.
 - But based on the site alone, this looks like a **credible pursue** lead.
 
-## 7. Kestrel Fit Assessment
+## 8. Kestrel Fit Assessment
 
 **Decision: Pursue**
 
@@ -135,7 +202,7 @@
 - The homepage experience has enough visible friction to justify improvement.
 - The business seems serious enough that a founder-led, selective pitch could resonate.
 
-## 8. Best First Offer
+## 9. Best First Offer
 
 **Best first engagement: Website Credibility Refresh**
 
@@ -151,7 +218,7 @@
   - stronger consultation path
   - reducing brand/message sprawl
 
-## 9. Suggested Path Forward
+## 10. Suggested Path Forward
 
 - **Outreach now**
 - But use a **highly specific angle**
@@ -161,7 +228,7 @@
   - making the site feel more composed and trustworthy
   - aligning the digital front door with the seriousness of the firm
 
-## 10. Ballpark Budget Range
+## 11. Ballpark Budget Range
 
 - **$8k–$20k**
 - Reason:
@@ -169,7 +236,7 @@
   - For a first engagement, the likely fit is not a tiny brochure tweak, but also not necessarily a full six-figure platform overhaul.
   - A homepage/IA/trust-flow refresh with selective page improvements sits plausibly in this band.
 
-## 11. Outreach Tailoring
+## 12. Outreach Tailoring
 
 ### Possible subject lines
 
@@ -194,7 +261,7 @@ Best,
 Daymian  
 Kestrel Labs
 
-## 12. Internal Summary for CRM
+## 13. Internal Summary for CRM
 
 - **One-line summary:** Established Atlanta family-law firm with strong operational signals; website feels busier and less premium than the business likely is.
 - **Likely offer:** Website Credibility Refresh
