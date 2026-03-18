@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vinings Family Dentistry — Option 2</title>
+  <style>
+    :root {
+      --ink:#1c3144;
+      --slate:#5c7285;
+      --mist:#eef3f6;
+      --white:#ffffff;
+      --line:#d8e1e7;
+      --sage:#8ea98b;
+      --olive:#6f8b67;
+      --sand:#f5f2ea;
+      --gold:#c5a86a;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,Arial,sans-serif;background:#f4f6f7;color:var(--ink);line-height:1.5}
+    .wrap{max-width:1240px;margin:0 auto;padding:40px 24px 90px}
+    .panel,.slide{background:var(--white);border:1px solid var(--line);border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+    .panel{padding:30px 34px;margin-bottom:28px}
+    .slide{padding:24px 26px;margin:28px 0}
+    h1,h2,h3{margin:0 0 12px}
+    h1{font-size:36px}
+    h2{font-size:28px}
+    p,li{color:var(--slate)}
+    .tag{display:inline-block;background:var(--sand);color:var(--gold);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px;padding:7px 10px;border-radius:999px;margin-bottom:12px}
+    .summary{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .box{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fbfcfc}
+    .mock{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--white)}
+    .topbar{background:var(--ink);color:#fff;padding:12px 22px;display:flex;justify-content:space-between;font-size:13px}
+    .nav{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+    .brand{font-size:24px;font-weight:800;display:flex;align-items:center;gap:12px}
+    .mark{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #fff 0 22%, #dbe6ec 22% 45%, #9fb8c7 45% 100%);border:1px solid #bfd0da}
+    .navlinks{display:flex;gap:24px;color:var(--slate);font-size:15px}
+    .hero{display:grid;grid-template-columns:1fr 1fr;min-height:500px}
+    .hero-left{padding:64px 52px;background:linear-gradient(180deg,#fafbfb,#f0f4f3)}
+    .hero-left h2{font-size:56px;line-height:1.02}
+    .hero-left p{font-size:18px;max-width:560px}
+    .eyebrow{color:var(--olive);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:12px;margin-bottom:10px}
+    .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+    .btn{padding:14px 22px;border-radius:999px;border:0;font-weight:800;font-size:15px}
+    .btn.primary{background:var(--olive);color:#fff}
+    .btn.secondary{background:#fff;border:1px solid var(--line);color:var(--ink)}
+    .mini-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+    .mini-proof div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;font-size:13px;color:var(--ink);font-weight:700}
+    .hero-right{position:relative;background:linear-gradient(160deg, rgba(142,169,139,.12), rgba(197,168,106,.12))}
+    .feature-card{position:absolute;inset:40px;background:#fff;border-radius:22px;box-shadow:0 20px 50px rgba(0,0,0,.10);overflow:hidden}
+    .feature-image{height:62%;background:linear-gradient(180deg,#d4dfd5,#aabda8)}
+    .feature-copy{padding:18px 20px}
+    .feature-copy strong{display:block;color:var(--ink);margin-bottom:8px}
+    .grid{display:grid;grid-template-columns:.95fr 1.05fr}
+    .photo{min-height:450px;background:linear-gradient(160deg,#e3ebe5,#f4f7f2);position:relative}
+    .photo:before{content:'';position:absolute;inset:36px;border-radius:18px;background:linear-gradient(180deg,#b9cdb8,#96af95)}
+    .content{padding:46px 42px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
+    .stat{background:var(--mist);border-radius:14px;padding:16px}
+    .stat strong{display:block;font-size:28px;color:var(--ink)}
+    .quote{background:var(--sand);border-left:4px solid var(--gold);padding:18px;border-radius:0 12px 12px 0}
+    .appt{display:grid;grid-template-columns:.9fr 1.1fr}
+    .appt-left{padding:42px;background:linear-gradient(180deg,#23384b,#1c3144);color:#fff}
+    .appt-left p,.appt-left li{color:rgba(255,255,255,.82)}
+    .appt-right{padding:28px;background:#fcfdfd}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .field{margin-bottom:14px}
+    .field label{display:block;font-size:13px;font-weight:800;color:var(--ink);margin-bottom:6px}
+    .field input,.field textarea,.field select{width:100%;padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff;font:inherit}
+    .mobile{width:390px;border:10px solid #1f2c35;border-radius:34px;overflow:hidden;margin:0 auto;background:#fff;box-shadow:0 14px 36px rgba(0,0,0,.12)}
+    .mobile-top{background:var(--ink);color:#fff;text-align:center;padding:10px 14px;font-size:13px}
+    .mobile-body{padding:22px 20px 26px;background:linear-gradient(180deg,#fafbfb,#f0f4f3)}
+    .mobile-body h3{font-size:32px;line-height:1.05;margin-bottom:10px}
+    .mcard{margin-top:14px;border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}
+    .deck-title{margin-top:18px}
+    .slide-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:22px;align-items:center}
+    .thumb{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+    .thumb img{width:100%;display:block}
+    @media (max-width:980px){.summary,.hero,.grid,.appt,.row,.slide-grid,.mini-proof{grid-template-columns:1fr}.navlinks{display:none}.mobile{width:100%;max-width:390px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel">
+      <h1>Vinings Family Dentistry — Option 2</h1>
+      <p>This direction leans a little warmer and more premium than Option 1. It keeps the local practice tone, but pushes the site toward a quieter, higher-trust look with softer greens, sand tones, and more editorial spacing.</p>
+      <div class="summary">
+        <div class="box"><h3>Warmer tone</h3><p>Less “medical template,” more reassuring boutique-practice feel.</p></div>
+        <div class="box"><h3>Premium trust</h3><p>More whitespace, softer palette, stronger visual packaging of credibility.</p></div>
+        <div class="box"><h3>Gentler conversion</h3><p>Appointment flow framed as supportive and calm, not just functional.</p></div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="tag">Option 2 · Homepage</div>
+      <div class="mock">
+        <div class="topbar"><div>Call Today · (770) 432-8516</div><div>Vinings / Atlanta · New patients welcome</div></div>
+        <div class="nav"><div class="brand"><div class="mark"></div><span>Vinings Family Dentistry</span></div><div class="navlinks"><span>Practice</span><span>Services</span><span>Patient Info</span><span>Appointment</span><span>Contact</span></div></div>
+        <div class="hero">
+          <div class="hero-left">
+            <div class="eyebrow">A warmer, more premium first impression</div>
+            <h2>Dental care that feels steadier, gentler, and easier to trust.</h2>
+            <p>This option keeps the recognizable local-practice feel, but softens the visual language and creates more breathing room around the most important trust and CTA elements.</p>
+            <div class="cta"><button class="btn primary">Request Appointment</button><button class="btn secondary">Call the Office</button></div>
+            <div class="mini-proof"><div>Comfort-aware care</div><div>Experienced local practice</div><div>Clear next steps</div></div>
+          </div>
+          <div class="hero-right">
+            <div class="feature-card">
+              <div class="feature-image"></div>
+              <div class="feature-copy"><strong>Why this direction works</strong><span>It preserves the approachable dental-practice tone, but feels more current and more intentionally designed.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="tag">Option 2 · About / trust</div>
+      <div class="mock">
+        <div class="grid">
+          <div class="photo"></div>
+          <div class="content">
+            <div class="eyebrow">A more premium trust story</div>
+            <h2>Let the doctor story and patient reassurance feel more composed.</h2>
+            <p>The current site has real trust material, but it feels buried in older formatting. This option presents the practice as more established, more reassuring, and more deliberate without becoming corporate or cold.</p>
+            <div class="stats">
+              <div class="stat"><strong>Local</strong><span>Vinings / Atlanta presence</span></div>
+              <div class="stat"><strong>Comfort</strong><span>Patient-anxiety aware care</span></div>
+              <div class="stat"><strong>Credible</strong><span>Clearer credentials and affiliations</span></div>
+            </div>
+            <div class="quote">A stronger about page can make the same practice feel much more trustworthy without changing the underlying facts at all.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="tag">Option 2 · Appointment flow</div>
+      <div class="mock">
+        <div class="appt">
+          <div class="appt-left">
+            <h2 style="color:white">A calmer booking experience.</h2>
+            <p>This version frames the appointment path as guided and supportive, not just a generic form sitting on a page.</p>
+            <ul>
+              <li>Shorter request form</li>
+              <li>Better response expectations</li>
+              <li>Cleaner fallback to call the office</li>
+              <li>More confidence-building presentation</li>
+            </ul>
+          </div>
+          <div class="appt-right">
+            <div class="row">
+              <div class="field"><label>First name</label><input></div>
+              <div class="field"><label>Last name</label><input></div>
+            </div>
+            <div class="row">
+              <div class="field"><label>Phone</label><input></div>
+              <div class="field"><label>Email</label><input></div>
+            </div>
+            <div class="field"><label>What do you need help with?</label><select><option>New patient appointment</option></select></div>
+            <div class="field"><label>Anything we should know?</label><textarea rows="4"></textarea></div>
+            <button class="btn primary" style="width:100%">Send Appointment Request</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="tag">Option 2 · Mobile</div>
+      <div class="mobile">
+        <div class="mobile-top">Call Us Today · (770) 432-8516</div>
+        <div class="mobile-body">
+          <div class="eyebrow">Softer mobile presentation</div>
+          <h3>Keep the site friendly. Make it breathe more.</h3>
+          <p>This option is less clinical and less template-heavy, while still keeping the same basic local-practice character.</p>
+          <div class="cta" style="flex-direction:column"><button class="btn primary">Request Appointment</button><button class="btn secondary">Call the Office</button></div>
+          <div class="mcard"><strong style="display:block;margin-bottom:6px;color:var(--ink)">What changes</strong><span>More spacing, calmer typography, and a softer trust-first tone.</span></div>
+          <div class="mcard"><strong style="display:block;margin-bottom:6px;color:var(--ink)">What stays familiar</strong><span>Service clarity, local-practice language, and easy appointment intent.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 class="deck-title">Option 2 Mini Deck</h2>
+      <div class="slide">
+        <div class="tag">Slide 1 · Distinct angle</div>
+        <div class="slide-grid">
+          <div>
+            <h3>Option 2 is warmer and more premium than Option 1.</h3>
+            <ul>
+              <li>Same business logic: trust, clarity, appointment flow.</li>
+              <li>Different feel: softer, calmer, and a little more boutique.</li>
+              <li>Best fit if the goal is to make the practice feel more established and less template-bound.</li>
+            </ul>
+          </div>
+          <div class="thumb"><img src="option-2-renders/option-2-render-01-homepage.png" alt="Option 2 homepage"></div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="tag">Slide 2 · Trust packaging</div>
+        <div class="slide-grid">
+          <div>
+            <h3>Trust is repackaged, not reinvented.</h3>
+            <ul>
+              <li>Credentials and reassurance become easier to absorb.</li>
+              <li>The doctor/practice story feels more deliberate.</li>
+              <li>The practice appears more premium without becoming flashy.</li>
+            </ul>
+          </div>
+          <div class="thumb"><img src="option-2-renders/option-2-render-02-about.png" alt="Option 2 about"></div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="tag">Slide 3 · Conversion path</div>
+        <div class="slide-grid">
+          <div>
+            <h3>The appointment flow should feel lighter and more reassuring.</h3>
+            <ul>
+              <li>The current site has real friction here.</li>
+              <li>This concept turns the flow into a cleaner decision point.</li>
+              <li>That matters because this is one of the highest-value pages on the site.</li>
+            </ul>
+          </div>
+          <div class="thumb"><img src="option-2-renders/option-2-render-03-appointment.png" alt="Option 2 appointment"></div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="tag">Slide 4 · Mobile tone</div>
+        <div class="slide-grid">
+          <div>
+            <h3>Mobile should feel gentler, not more compressed.</h3>
+            <ul>
+              <li>Option 2 uses more whitespace and softer contrast.</li>
+              <li>The first screen becomes easier to trust quickly.</li>
+              <li>This is likely the most emotionally reassuring of the two directions.</li>
+            </ul>
+          </div>
+          <div class="thumb"><img src="option-2-renders/option-2-render-04-mobile.png" alt="Option 2 mobile"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
