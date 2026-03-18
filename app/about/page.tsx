@@ -56,7 +56,7 @@ export default function AboutPage() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-xs sm:tracking-[0.24em]">
               Founder & Principal Engineer
             </p>
-            <p className="mt-3 text-xl font-semibold tracking-[-0.03em] text-black sm:text-2xl">
+            <p className="mt-2 text-sm font-medium leading-6 text-black/66 sm:text-base">
               Daymian
             </p>
             <div className="mt-4 max-w-sm overflow-hidden border border-black/10 bg-neutral-100">
