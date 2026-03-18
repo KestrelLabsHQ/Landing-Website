@@ -6,75 +6,90 @@
   <title>Vinings Family Dentistry — Suggested Updates</title>
   <style>
     :root {
-      --navy:#17324d;
-      --blue:#2f5d7c;
-      --teal:#3b8f8a;
-      --mint:#eaf4f2;
-      --sand:#f6f4ef;
-      --text:#163042;
-      --muted:#5d6c78;
-      --line:#d9e3e8;
-      --accent:#5aa37d;
+      --brand-navy:#24445f;
+      --brand-blue:#4b7397;
+      --brand-green:#8cbf45;
+      --brand-light:#eef4f7;
+      --brand-sand:#f7f5ef;
+      --text:#21394d;
+      --muted:#617487;
+      --line:#d7e1e8;
+      --white:#ffffff;
     }
     * { box-sizing:border-box; }
-    body { margin:0; font-family: Inter, Arial, sans-serif; color:var(--text); background:#f5f7f8; line-height:1.5; }
-    .wrap { max-width: 1200px; margin: 0 auto; padding: 40px 24px 80px; }
-    .intro { background:white; border:1px solid var(--line); border-radius:20px; padding:28px 32px; margin-bottom:28px; box-shadow:0 8px 30px rgba(0,0,0,.05); }
+    body { margin:0; font-family: Inter, Arial, sans-serif; color:var(--text); background:#f4f7f9; line-height:1.5; }
+    .wrap { max-width: 1240px; margin: 0 auto; padding: 40px 24px 80px; }
+    .intro, .render { background:var(--white); border:1px solid var(--line); border-radius:22px; box-shadow:0 10px 32px rgba(28,52,74,.06); }
+    .intro { padding:30px 34px; margin-bottom:28px; }
+    .render { padding:22px; margin:30px 0; }
     h1,h2,h3 { margin:0 0 12px; }
-    h1 { font-size:34px; }
-    h2 { font-size:26px; margin-top:10px; }
+    h1 { font-size:36px; color:var(--brand-navy); }
+    h2 { font-size:28px; color:var(--brand-navy); }
     p, li { color:var(--muted); }
-    .cards { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; margin-top:18px; }
-    .card { background:white; border:1px solid var(--line); border-radius:16px; padding:18px; }
-    .render { background:white; border:1px solid var(--line); border-radius:20px; padding:20px; margin:30px 0; box-shadow:0 8px 30px rgba(0,0,0,.05); }
-    .label { display:inline-block; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--blue); font-weight:700; background:var(--mint); padding:6px 10px; border-radius:999px; margin-bottom:12px; }
-    .hero-mock { border:1px solid var(--line); border-radius:18px; overflow:hidden; background:white; }
-    .topbar { background:var(--navy); color:#fff; display:flex; justify-content:space-between; padding:12px 22px; font-size:14px; }
+    .pill { display:inline-block; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--brand-blue); font-weight:800; background:#edf3f8; padding:7px 11px; border-radius:999px; margin-bottom:12px; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:18px; }
+    .card { background:#fbfcfd; border:1px solid var(--line); border-radius:16px; padding:18px; }
+    .hero-mock, .about-mock, .appointment-mock { border:1px solid var(--line); border-radius:20px; overflow:hidden; background:var(--white); }
+    .topbar { background:var(--brand-blue); color:#fff; display:flex; justify-content:space-between; padding:11px 22px; font-size:13px; }
     .navbar { display:flex; justify-content:space-between; align-items:center; padding:18px 22px; border-bottom:1px solid var(--line); }
-    .brand { font-weight:800; letter-spacing:.02em; font-size:24px; color:var(--navy); }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.02em; font-size:24px; color:var(--brand-navy); }
+    .tooth { width:34px; height:34px; border-radius:10px 10px 16px 16px; background:linear-gradient(180deg,#dbe8f0,#b8cedf); position:relative; }
+    .tooth:before, .tooth:after { content:''; position:absolute; bottom:-5px; width:10px; height:14px; background:#dbe8f0; border-radius:0 0 8px 8px; }
+    .tooth:before { left:5px; }
+    .tooth:after { right:5px; }
     .nav { display:flex; gap:22px; color:var(--muted); font-size:15px; }
-    .hero { display:grid; grid-template-columns: 1.05fr .95fr; min-height:460px; }
-    .hero-copy { padding:60px 50px; background:linear-gradient(180deg,#f7fafb,#eef5f4); }
-    .hero-copy h2 { font-size:52px; line-height:1.05; color:var(--navy); margin-bottom:16px; }
+    .hero { display:grid; grid-template-columns: 1.02fr .98fr; min-height:470px; }
+    .hero-copy { padding:62px 52px; background:linear-gradient(180deg,#f9fbfc,#eef4f7); }
+    .hero-copy h2 { font-size:54px; line-height:1.02; margin-bottom:16px; }
     .hero-copy p { font-size:18px; max-width:560px; }
-    .cta-row { display:flex; gap:14px; margin-top:24px; }
-    .btn { padding:14px 20px; border-radius:999px; border:0; font-weight:700; }
-    .btn.primary { background:var(--accent); color:white; }
-    .btn.secondary { background:white; color:var(--navy); border:1px solid var(--line); }
-    .proof { display:flex; gap:24px; margin-top:28px; font-size:14px; color:var(--navy); font-weight:600; flex-wrap:wrap; }
-    .hero-art { position:relative; background:linear-gradient(160deg, rgba(23,50,77,.08), rgba(59,143,138,.18)); }
-    .portrait { position:absolute; right:42px; bottom:0; width:72%; height:88%; border-radius:22px 22px 0 0; background:linear-gradient(180deg,#dbe7ee,#b9ccd8); box-shadow:0 18px 50px rgba(0,0,0,.12); }
-    .about-mock { border:1px solid var(--line); border-radius:18px; background:white; overflow:hidden; }
-    .section-grid { display:grid; grid-template-columns: .9fr 1.1fr; }
-    .photo-block { min-height:440px; background:linear-gradient(160deg,#dfe9ef,#f0f6f7); position:relative; }
-    .photo-block:after { content:''; position:absolute; inset:42px; border-radius:18px; background:linear-gradient(180deg,#c3d5df,#98b4c2); }
+    .eyebrow { color:var(--brand-green); font-weight:800; text-transform:uppercase; letter-spacing:.08em; font-size:12px; margin-bottom:10px; }
+    .cta-row { display:flex; gap:14px; margin-top:24px; flex-wrap:wrap; }
+    .btn { padding:14px 22px; border-radius:999px; border:0; font-weight:800; font-size:15px; }
+    .btn.primary { background:var(--brand-green); color:#fff; }
+    .btn.secondary { background:#fff; color:var(--brand-navy); border:1px solid var(--line); }
+    .proof { display:flex; gap:14px; margin-top:26px; flex-wrap:wrap; }
+    .proof span { background:#fff; border:1px solid var(--line); color:var(--brand-navy); padding:10px 14px; border-radius:999px; font-size:13px; font-weight:700; }
+    .hero-art { position:relative; background:linear-gradient(160deg, rgba(75,115,151,.13), rgba(140,191,69,.15)); }
+    .hero-card { position:absolute; right:42px; bottom:34px; width:74%; background:#fff; border-radius:22px; padding:18px; box-shadow:0 18px 48px rgba(28,52,74,.14); }
+    .hero-photo { height:280px; border-radius:18px; background:linear-gradient(180deg,#d4e2eb,#a9c0d0); margin-bottom:14px; }
+    .hero-badges { display:flex; gap:10px; flex-wrap:wrap; }
+    .hero-badges span { font-size:12px; background:#eef4f7; color:var(--brand-blue); padding:8px 10px; border-radius:999px; font-weight:700; }
+    .section-grid, .appt-grid { display:grid; grid-template-columns: .92fr 1.08fr; }
+    .photo-block { min-height:460px; background:linear-gradient(160deg,#e5eef4,#f6fafb); position:relative; }
+    .photo-block:before { content:''; position:absolute; inset:34px; border-radius:18px; background:linear-gradient(180deg,#bfd2de,#9cb7c7); }
+    .photo-block:after { content:'Dr. McMaster + team photography area'; position:absolute; left:58px; bottom:54px; color:#fff; font-weight:700; letter-spacing:.03em; }
     .content-block { padding:46px 42px; }
-    .kicker { color:var(--teal); font-weight:800; letter-spacing:.08em; text-transform:uppercase; font-size:12px; }
     .stat-row { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:26px 0; }
-    .stat { background:var(--sand); border-radius:14px; padding:16px; }
-    .stat strong { display:block; color:var(--navy); font-size:26px; }
-    .quote { margin-top:18px; padding:18px; border-left:4px solid var(--teal); background:var(--mint); border-radius:0 12px 12px 0; color:var(--text); }
-    .appointment-mock { border:1px solid var(--line); border-radius:18px; overflow:hidden; background:white; }
-    .appt-grid { display:grid; grid-template-columns: .92fr 1.08fr; }
-    .appt-copy { background:var(--navy); color:white; padding:42px; }
+    .stat { background:var(--brand-sand); border-radius:14px; padding:16px; }
+    .stat strong { display:block; color:var(--brand-navy); font-size:28px; }
+    .quote { margin-top:18px; padding:18px; border-left:4px solid var(--brand-green); background:#f3f8ea; border-radius:0 12px 12px 0; color:var(--text); }
+    .appt-copy { background:var(--brand-navy); color:#fff; padding:42px; }
     .appt-copy p { color:rgba(255,255,255,.82); }
-    .check { margin:20px 0 0; padding:0; list-style:none; }
-    .check li { color:white; margin:10px 0; }
+    .check { list-style:none; margin:20px 0 0; padding:0; }
+    .check li { color:#fff; margin:10px 0; }
     .form { padding:30px; background:#fbfcfd; }
     .field { margin-bottom:14px; }
-    .field label { display:block; font-size:13px; color:var(--navy); font-weight:700; margin-bottom:6px; }
-    .field input, .field select, .field textarea { width:100%; padding:14px 14px; border:1px solid #cfd9df; border-radius:12px; background:white; font:inherit; }
+    .field label { display:block; font-size:13px; color:var(--brand-navy); font-weight:800; margin-bottom:6px; }
+    .field input, .field select, .field textarea { width:100%; padding:14px; border:1px solid #cfd9df; border-radius:12px; background:#fff; font:inherit; }
     .row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
     .small { font-size:12px; color:var(--muted); }
-    .mobile-frame { width:390px; border:10px solid #16212b; border-radius:34px; margin:0 auto; overflow:hidden; background:white; box-shadow:0 14px 40px rgba(0,0,0,.12); }
-    .mobile-top { background:var(--navy); color:white; padding:10px 16px; font-size:13px; text-align:center; }
-    .mobile-content { padding:22px 20px 26px; background:linear-gradient(180deg,#f7fafb,#eef5f4); }
-    .mobile-content h3 { font-size:32px; line-height:1.06; color:var(--navy); margin-bottom:10px; }
-    .mobile-card { background:white; border:1px solid var(--line); border-radius:16px; padding:16px; margin-top:16px; }
+    .mobile-frame { width:390px; border:10px solid #1d2a35; border-radius:34px; margin:0 auto; overflow:hidden; background:#fff; box-shadow:0 14px 40px rgba(0,0,0,.12); }
+    .mobile-top { background:var(--brand-blue); color:#fff; padding:10px 16px; font-size:13px; text-align:center; }
+    .mobile-content { padding:22px 20px 26px; background:linear-gradient(180deg,#f9fbfc,#eef4f7); }
+    .mobile-brand { display:flex; align-items:center; gap:10px; color:var(--brand-navy); font-weight:800; margin-bottom:16px; }
+    .mobile-content h3 { font-size:32px; line-height:1.05; color:var(--brand-navy); margin-bottom:10px; }
+    .mobile-card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:16px; margin-top:16px; }
     .footer-note { margin-top:18px; font-size:13px; color:var(--muted); }
+    .deck { margin-top:34px; display:grid; gap:18px; }
+    .slide { background:#fff; border:1px solid var(--line); border-radius:20px; padding:26px 28px; box-shadow:0 10px 30px rgba(28,52,74,.05); }
+    .slide ul { margin:12px 0 0 18px; }
+    .slide-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:22px; align-items:center; }
+    .thumb { border:1px solid var(--line); border-radius:16px; overflow:hidden; background:#fff; }
+    .thumb img { width:100%; display:block; }
     @media (max-width: 980px) {
-      .cards, .hero, .section-grid, .appt-grid, .row { grid-template-columns:1fr; }
+      .cards, .hero, .section-grid, .appt-grid, .row, .slide-grid { grid-template-columns:1fr; }
       .mobile-frame { width:100%; max-width:390px; }
+      .nav { display:none; }
     }
   </style>
 </head>
@@ -82,101 +97,168 @@
   <div class="wrap">
     <div class="intro">
       <h1>Vinings Family Dentistry — Suggested Updates</h1>
-      <p>These concepts translate the lead-analysis findings into a clearer visual direction: calmer presentation, stronger trust packaging, cleaner appointment flow, and less template-heavy structure.</p>
+      <p>These concepts stay closer to the site’s current blue/green dental-practice language, but tighten the hierarchy and give the practice a more credible, current, and conversion-friendly presentation.</p>
       <div class="cards">
-        <div class="card"><h3>1. Modernize the first impression</h3><p>Replace the dated hero with a calmer, more reassuring above-the-fold section focused on trust, convenience, and clear next steps.</p></div>
-        <div class="card"><h3>2. Repackage credibility</h3><p>Turn credentials, doctor story, and patient comfort messaging into a tighter trust sequence instead of long undifferentiated text blocks.</p></div>
-        <div class="card"><h3>3. Reduce conversion friction</h3><p>Make appointment booking feel simpler, more local, and more confidence-building across desktop and mobile.</p></div>
+        <div class="card"><h3>1. Keep the local-practice feel</h3><p>Preserve the approachable, neighborhood-dentistry tone while stripping away the stock-template feel.</p></div>
+        <div class="card"><h3>2. Make trust easier to absorb</h3><p>Present credentials, comfort messaging, and patient reassurance in a more visual, skimmable way.</p></div>
+        <div class="card"><h3>3. Fix the important path</h3><p>Make appointment booking and contact feel simpler, cleaner, and more confidence-building.</p></div>
       </div>
     </div>
 
     <div class="render">
-      <div class="label">Render 1 · Homepage direction</div>
+      <div class="pill">Render 1 · Homepage direction</div>
       <div class="hero-mock">
-        <div class="topbar"><div>Call Today · (770) 432-8516</div><div>Vinings, Atlanta · Mon–Thu 9–5</div></div>
-        <div class="navbar"><div class="brand">Vinings Family Dentistry</div><div class="nav"><span>Services</span><span>About</span><span>New Patients</span><span>Contact</span></div></div>
+        <div class="topbar"><div>Call Us Today · (770) 432-8516</div><div>Vinings / Atlanta · Mon–Thu 9:00–5:00</div></div>
+        <div class="navbar"><div class="brand"><div class="tooth"></div><span>Vinings Family Dentistry</span></div><div class="nav"><span>Our Practice</span><span>Services</span><span>New Patients</span><span>Appointment</span><span>Contact</span></div></div>
         <div class="hero">
           <div class="hero-copy">
-            <div class="label">Calmer first impression</div>
-            <h2>Comfortable, modern dental care for families in Vinings.</h2>
-            <p>General, cosmetic, and restorative dentistry with a steadier patient experience — clearer communication, practical treatment guidance, and an easier path to your next appointment.</p>
+            <div class="eyebrow">Dentistry done correctly — with less friction</div>
+            <h2>Comfortable family dentistry with a calmer, more modern front door.</h2>
+            <p>Retain the local, reassuring character of the current practice site, but make the first impression feel more current, more trustworthy, and easier to act on for new patients.</p>
             <div class="cta-row"><button class="btn primary">Request Appointment</button><button class="btn secondary">Call the Office</button></div>
-            <div class="proof"><span>Experienced local practice</span><span>Gentle care focus</span><span>Clear next-step booking</span></div>
+            <div class="proof"><span>Experienced local practice</span><span>Patient-comfort focused</span><span>General + cosmetic care</span></div>
           </div>
-          <div class="hero-art"><div class="portrait"></div></div>
+          <div class="hero-art">
+            <div class="hero-card">
+              <div class="hero-photo"></div>
+              <div class="hero-badges"><span>New patients welcome</span><span>Comfort-first care</span><span>Clear next steps</span></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="footer-note">Why this direction: more premium, less stock-template, stronger trust + CTA hierarchy, and less visual noise in the first screenful.</div>
+      <div class="footer-note">Closer to the current site: blue/green palette, local-practice tone, family-dentistry positioning. Improved: hierarchy, polish, and CTA clarity.</div>
     </div>
 
     <div class="render">
-      <div class="label">Render 2 · About / trust section</div>
+      <div class="pill">Render 2 · About / trust direction</div>
       <div class="about-mock">
         <div class="section-grid">
           <div class="photo-block"></div>
           <div class="content-block">
-            <div class="kicker">Meet the practice</div>
-            <h2>Experienced care with a more human, reassuring presentation.</h2>
-            <p>Instead of long credential blocks and scattered trust signals, this approach turns the doctor story, memberships, and patient comfort message into a clearer credibility section that is easier to scan and more confidence-building.</p>
+            <div class="eyebrow">Meet the practice</div>
+            <h2>Reframe the doctor story as structured trust, not just long copy.</h2>
+            <p>The current site already has useful credibility signals — doctor profile, memberships, local service, patient-comfort positioning. This concept simply packages them in a way that feels easier to trust and faster to read.</p>
             <div class="stat-row">
               <div class="stat"><strong>Local</strong><span>Atlanta / Vinings practice</span></div>
               <div class="stat"><strong>Comfort</strong><span>Patient-anxiety aware approach</span></div>
-              <div class="stat"><strong>Trusted</strong><span>Credentials & affiliations surfaced clearly</span></div>
+              <div class="stat"><strong>Trusted</strong><span>Credentials surfaced clearly</span></div>
             </div>
-            <div class="quote">“We help patients feel informed, comfortable, and clear on the next step — not rushed through a generic dental-site template.”</div>
+            <div class="quote">“The current site already has real trust ingredients. The opportunity is mostly in how they’re presented.”</div>
           </div>
         </div>
       </div>
-      <div class="footer-note">Why this direction: the current site has trust ingredients, but they are packaged weakly. This makes credibility feel more deliberate and more modern.</div>
+      <div class="footer-note">Closer to the current site: keep Dr. McMaster / staff credibility front and center. Improved: clearer structure, less text fatigue, stronger premium feel.</div>
     </div>
 
     <div class="render">
-      <div class="label">Render 3 · Appointment flow</div>
+      <div class="pill">Render 3 · Appointment flow</div>
       <div class="appointment-mock">
         <div class="appt-grid">
           <div class="appt-copy">
-            <h2 style="color:white;">Request an appointment without the friction.</h2>
-            <p>One of the biggest opportunities is making the conversion path feel simpler, more trustworthy, and less error-prone than the current appointment experience.</p>
+            <h2 style="color:white;">Make requesting an appointment feel simpler and more trustworthy.</h2>
+            <p>The biggest conversion opportunity is not flashy redesign — it’s reducing friction, clarifying next steps, and making the request flow feel more intentionally cared for.</p>
             <ul class="check">
               <li>✓ Clear response expectations</li>
-              <li>✓ Fewer required fields</li>
-              <li>✓ Better reassurance for new patients</li>
-              <li>✓ More obvious call / request options</li>
+              <li>✓ Shorter, cleaner form</li>
+              <li>✓ Stronger click-to-call support</li>
+              <li>✓ Less error-prone presentation</li>
             </ul>
           </div>
           <div class="form">
             <div class="row">
-              <div class="field"><label>First name</label><input value=""></div>
-              <div class="field"><label>Last name</label><input value=""></div>
+              <div class="field"><label>First name</label><input></div>
+              <div class="field"><label>Last name</label><input></div>
             </div>
             <div class="row">
-              <div class="field"><label>Phone</label><input value=""></div>
-              <div class="field"><label>Email</label><input value=""></div>
+              <div class="field"><label>Phone</label><input></div>
+              <div class="field"><label>Email</label><input></div>
             </div>
-            <div class="field"><label>What do you need help with?</label><select><option>New patient appointment</option></select></div>
+            <div class="field"><label>I’m contacting you about</label><select><option>New patient appointment</option></select></div>
             <div class="field"><label>Preferred day / time</label><textarea rows="4"></textarea></div>
             <button class="btn primary" style="width:100%;">Send Appointment Request</button>
-            <p class="small">A scheduling coordinator will follow up to confirm availability. If you prefer, call the office directly at (770) 432-8516.</p>
+            <p class="small">A scheduling coordinator will follow up to confirm availability. Prefer to call? (770) 432-8516</p>
           </div>
         </div>
       </div>
-      <div class="footer-note">Why this direction: the current appointment path appears weaker than it should be for such an important page. This version emphasizes trust, clarity, and lower friction.</div>
+      <div class="footer-note">Closer to the current site: preserve appointment-request behavior. Improved: cleaner form structure, stronger reassurance, less template friction.</div>
     </div>
 
     <div class="render">
-      <div class="label">Render 4 · Mobile homepage direction</div>
+      <div class="pill">Render 4 · Mobile homepage direction</div>
       <div class="mobile-frame">
         <div class="mobile-top">Call Us Today · (770) 432-8516</div>
         <div class="mobile-content">
-          <div class="label">Mobile-first simplification</div>
-          <h3>Modern family dentistry without the clutter.</h3>
-          <p>Keep the first screen focused on reassurance, trust, and a clear next action.</p>
+          <div class="mobile-brand"><div class="tooth"></div><span>Vinings Family Dentistry</span></div>
+          <div class="eyebrow">Mobile-first simplification</div>
+          <h3>Keep the reassurance. Lose the clutter.</h3>
+          <p>Mobile is where the current template feels most compressed. This keeps the friendly dental-practice tone but gives the first screen cleaner spacing and stronger CTA focus.</p>
           <div class="cta-row" style="flex-direction:column;"><button class="btn primary">Request Appointment</button><button class="btn secondary">Call the Office</button></div>
-          <div class="mobile-card"><strong style="color:var(--navy); display:block; margin-bottom:6px;">Why this feels better</strong><span style="color:var(--muted);">Less stacked copy, clearer spacing, stronger CTA priority, and a calmer overall feel.</span></div>
-          <div class="mobile-card"><strong style="color:var(--navy); display:block; margin-bottom:6px;">What to keep</strong><span style="color:var(--muted);">Patient comfort messaging, local trust, and straightforward appointment intent.</span></div>
+          <div class="mobile-card"><strong style="color:var(--brand-navy); display:block; margin-bottom:6px;">What improves</strong><span style="color:var(--muted);">Less stacked copy, cleaner spacing, stronger CTA priority, and a steadier first impression.</span></div>
+          <div class="mobile-card"><strong style="color:var(--brand-navy); display:block; margin-bottom:6px;">What stays recognizable</strong><span style="color:var(--muted);">Blue/green palette, local practice voice, and straightforward appointment intent.</span></div>
         </div>
       </div>
-      <div class="footer-note">Why this direction: mobile is where the current template compression becomes most obvious. This concept trims the experience down to what matters first.</div>
+      <div class="footer-note">Closer to the current site: familiar brand tone. Improved: mobile clarity, cleaner hierarchy, and less visual compression.</div>
+    </div>
+
+    <div class="intro deck">
+      <h2>Mini Deck</h2>
+      <div class="slide">
+        <div class="pill">Slide 1 · Core diagnosis</div>
+        <div class="slide-grid">
+          <div>
+            <h3>The practice feels more credible than the website.</h3>
+            <ul>
+              <li>Current site feels older and more template-driven than the business likely is.</li>
+              <li>The trust ingredients are already there — they’re just weakly packaged.</li>
+              <li>The biggest practical opportunities are homepage clarity, about-page trust framing, and appointment flow cleanup.</li>
+            </ul>
+          </div>
+          <div class="thumb"><img src="renders/render-01-homepage-direction.png" alt="Homepage direction"></div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="pill">Slide 2 · What to update first</div>
+        <div class="slide-grid">
+          <div>
+            <h3>Suggested first-pass scope</h3>
+            <ul>
+              <li>Refresh homepage first impression and CTA hierarchy</li>
+              <li>Rebuild the about/practice section around structured trust</li>
+              <li>Simplify the appointment flow and remove friction/error risk</li>
+              <li>Shorten and clarify the mobile experience</li>
+            </ul>
+          </div>
+          <div class="thumb"><img src="renders/render-02-about-trust-direction.png" alt="About trust direction"></div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="pill">Slide 3 · Why this matters commercially</div>
+        <div class="slide-grid">
+          <div>
+            <h3>This is mostly a trust + conversion problem, not a content problem.</h3>
+            <ul>
+              <li>The practice already has services, credibility, and local identity.</li>
+              <li>The site’s design language makes all of that feel less current than it should.</li>
+              <li>A focused refresh could improve first impression without needing a giant rebuild.</li>
+            </ul>
+          </div>
+          <div class="thumb"><img src="renders/render-03-appointment-direction.png" alt="Appointment direction"></div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="pill">Slide 4 · Mobile angle</div>
+        <div class="slide-grid">
+          <div>
+            <h3>Mobile makes the template limitations more obvious.</h3>
+            <ul>
+              <li>The current site compresses poorly on smaller screens.</li>
+              <li>First-screen clarity and CTA priority matter even more on mobile.</li>
+              <li>A lighter mobile hierarchy is an easy credibility win.</li>
+            </ul>
+          </div>
+          <div class="thumb"><img src="renders/render-04-mobile-direction.png" alt="Mobile direction"></div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
