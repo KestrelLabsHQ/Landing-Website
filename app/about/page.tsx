@@ -54,10 +54,7 @@ export default function AboutPage() {
         <div className="grid gap-px bg-black/10 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="bg-white p-5 sm:p-6 md:p-8">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-xs sm:tracking-[0.24em]">
-              Founder
-            </p>
-            <p className="mt-3 text-sm font-medium leading-6 text-black/72">
-              Founder and Principal Engineer
+              Founder & Principal Engineer
             </p>
             <div className="mt-4 max-w-sm overflow-hidden border border-black/10 bg-neutral-100">
               <Image
