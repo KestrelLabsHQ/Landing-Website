@@ -54,7 +54,7 @@ main = "worker.js"
 compatibility_date = "2026-03-17"
 
 [vars]
-ALLOWED_ORIGIN = "https://kestrellabshq.com"
+ALLOWED_ORIGINS = "https://kestrellabshq.com,https://www.kestrellabshq.com"
 MAIL_TO = "contact@kestrellabshq.com"
 MAIL_FROM = "Kestrel Labs <contact@kestrellabshq.com>"
 ```
@@ -117,6 +117,8 @@ The contact form sends JSON like:
 The Worker:
 
 - validates required fields
+- checks that the request origin is allowed
+- supports both `https://kestrellabshq.com` and `https://www.kestrellabshq.com`
 - sets `reply_to` to the submitter's email
 - sends the email through Resend to `contact@kestrellabshq.com`
 - returns JSON success/error
@@ -126,6 +128,6 @@ The Worker:
 For v1.1 / v2:
 
 - add Cloudflare Turnstile
-- restrict `ALLOWED_ORIGIN` to production and preview origins you trust
+- restrict allowed origins to production and preview origins you trust
 - log failed sends
 - add lightweight rate limiting in the Worker

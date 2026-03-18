@@ -1,9 +1,14 @@
 const worker = {
   async fetch(request, env) {
+    const origin = request.headers.get("Origin") || "";
+    const allowedOrigins = getAllowedOrigins(env);
+    const allowOrigin = allowedOrigins.has(origin) ? origin : allowedOrigins.values().next().value || "*";
+
     const corsHeaders = {
-      "Access-Control-Allow-Origin": env.ALLOWED_ORIGIN || "*",
+      "Access-Control-Allow-Origin": allowOrigin,
       "Access-Control-Allow-Methods": "POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
+      Vary: "Origin",
     };
 
     if (request.method === "OPTIONS") {
@@ -12,6 +17,10 @@ const worker = {
 
     if (request.method !== "POST") {
       return json({ error: "Method not allowed" }, 405, corsHeaders);
+    }
+
+    if (origin && !allowedOrigins.has(origin)) {
+      return json({ error: "Origin not allowed" }, 403, corsHeaders);
     }
 
     try {
@@ -69,6 +78,16 @@ const worker = {
     }
   },
 };
+
+function getAllowedOrigins(env) {
+  const raw = env.ALLOWED_ORIGINS || env.ALLOWED_ORIGIN || "*";
+  return new Set(
+    raw
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean),
+  );
+}
 
 function json(payload, status = 200, headers = {}) {
   return new Response(JSON.stringify(payload), {
