@@ -21,10 +21,11 @@
 - **Tools used:** OpenClaw browser tool, rendered screenshots, web fetch, targeted Playwright evidence capture.
 - **Desktop review standard:** Representative desktop browser viewport at **1920x1080**.
 - **Mobile review standard:** iPhone-class mobile viewport at roughly **390x844** with a separate mobile pass and dedicated screenshots.
+- **Capture fidelity:** Raw/live capture with no style or layout overrides.
 - **Confidence:** **Moderate**
 - **Limits:**
   - I was able to inspect the real rendered site experience.
-  - The original local Playwright full-page capture script failed on this site, so I used a more controlled targeted capture flow for evidence screenshots.
+  - The screenshots were rerun using the updated raw-capture process with no CSS/style injection.
   - I could not enrich with external review/map data because `web_search` was exposed but not properly configured in the current environment.
   - Business-quality judgment is therefore weighted more toward **onsite signals** than offsite reputation evidence.
 
