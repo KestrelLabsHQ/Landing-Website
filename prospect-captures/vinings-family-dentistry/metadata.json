@@ -1,11 +1,20 @@
 {
   "sourceUrl": "https://viningsfamilydentistry.com",
   "slug": "vinings-family-dentistry",
-  "capturedAt": "2026-03-18T22:02:29.876Z",
+  "capturedAt": "2026-03-18T22:49:56.579Z",
   "captureFidelity": "raw-live",
   "viewport": {
     "desktop": "1920x1080",
     "mobile": "390x844"
+  },
+  "capturePath": {
+    "desktop": "headed-fallback",
+    "mobile": "headless"
+  },
+  "desktopBlockDetection": {
+    "initialHeadlessBlocked": true,
+    "finalUrl": "https://www.viningsfamilydentistry.com/",
+    "title": "Atlanta, GA Dentist"
   },
   "evidence": [
     "00-fullpage-desktop-homepage.png",

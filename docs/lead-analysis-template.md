@@ -25,7 +25,8 @@ Use this template when writing a prospect review that includes screenshot eviden
 
 - **Mode:** Rendered browser analysis / mixed / source-heavy
 - **Tools used:**
-- **Capture fidelity:** Raw/live capture by default; note any workaround if used
+- **Capture fidelity:** Raw/live capture by default; note any fallback/workaround if used
+- **Capture path:** Headless first; headed fallback for desktop if blocked
 - **Confidence:**
 - **Limits:**
 

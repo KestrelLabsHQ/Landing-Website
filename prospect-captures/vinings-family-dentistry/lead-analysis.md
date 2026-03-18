@@ -21,11 +21,12 @@
 - **Tools used:** Playwright raw/live capture, OpenClaw browser inspection, web fetch.
 - **Desktop review standard:** Representative desktop browser viewport at **1920x1080**.
 - **Mobile review standard:** iPhone-class mobile viewport at roughly **390x844**.
-- **Capture fidelity:** Raw/live capture by default with no style or layout overrides.
+- **Capture fidelity:** Raw/live capture with no style or layout overrides.
+- **Capture path:** Desktop started headless but required a **headed fallback** because the site returned 403 to desktop headless automation; mobile succeeded in headless mode.
 - **Confidence:** **Moderate**
 - **Limits:**
   - The site was captured and reviewed from its rendered experience.
-  - Some screenshot-analysis tooling surfaced misleading 403-style renders on a subset of exported images, so I weighted direct browser inspection and the successful raw captures more heavily.
+  - Desktop headless automation was blocked with 403, so desktop evidence was rerun successfully in headed mode.
   - `web_search` is still not properly configured in this environment, so I could not enrich with Maps/review/LinkedIn context.
   - Business-quality judgment is therefore based mostly on onsite signals.
 

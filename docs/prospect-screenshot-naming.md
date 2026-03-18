@@ -124,10 +124,16 @@ The goal is to inspect the site in a realistic desktop context before making jud
 Default to raw/live screenshots.
 Do not apply CSS injections, layout normalization, width constraints, or visual cleanup during capture unless a technical issue makes faithful capture impossible.
 
-If a workaround is ever required:
+Capture priority:
+1. desktop headless raw capture
+2. desktop headed raw capture if headless is blocked
+3. other faithful browser-inspection fallback only if both fail
+
+If a fallback/workaround is ever required:
 - document it in the report
 - keep the rawest possible version available
-- note that the image may be slightly less faithful than a clean capture
+- note why the fallback was needed
+- note that the image may be slightly less faithful than a clean primary-path capture
 
 ## Notes
 The point is not volume. A small set of sharp evidence is more convincing than dumping ten generic full-page screenshots.

@@ -188,6 +188,12 @@ Use this baseline unless there is a specific reason to do otherwise:
 - desktop viewport: `1920x1080`
 - mobile viewport: iPhone-class mobile viewport (roughly `390x844`)
 
+Desktop automation capture flow:
+- start with headless capture
+- if the site blocks desktop headless capture (for example with 403 / bot protection / blank-denied response), retry desktop capture in headed mode
+- if headed succeeds, use that desktop evidence and note the fallback in the report
+- if both fail, fall back to the most faithful browser-inspection path available and note the limitation explicitly
+
 Capture the site as it exists live.
 Do **not** inject style overrides, layout fixes, or cosmetic cleanup during normal capture.
 If a technical bug prevents faithful capture and an override/workaround is necessary:
