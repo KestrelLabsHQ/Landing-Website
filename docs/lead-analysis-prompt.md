@@ -181,6 +181,16 @@ Capture and reference screenshots of:
 - specific UX/UI problems worth calling out
 - any visible bugs, broken states, awkward overlays, poor hierarchy, or weak CTA flow
 - at least one example of a suggested improvement opportunity
+- at least one mobile-specific evidence screenshot when mobile analysis is relevant
+
+Prefer a maximized or effectively fullscreen desktop browser pass during analysis.
+If true fullscreen is unavailable, use a large desktop viewport that approximates fullscreen review.
+
+In the final markdown report:
+- embed images directly in the report
+- keep image sizes consistent
+- use moderate widths so the screenshots are readable without dominating the document
+- include the source filename near each embedded image for easy lookup
 
 If possible, name the screenshots clearly so they can be dropped into a report as supporting evidence rather than just archived as raw capture output.
 

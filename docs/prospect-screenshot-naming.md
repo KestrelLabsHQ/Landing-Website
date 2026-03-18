@@ -86,15 +86,34 @@ Aim for at least:
 
 ## Suggested markdown reference style
 
-```md
-- Evidence: `evidence/03-issue-busy-homepage-rhythm.png`
+Prefer embedded HTML image tags so image widths stay consistent across reports.
+
+Desktop example:
+
+```html
+<img src="evidence/03-issue-busy-homepage-rhythm.png" alt="Busy homepage rhythm" width="900">
 ```
 
-Or:
+Mobile example:
+
+```html
+<img src="evidence/06-mobile-density-problem.png" alt="Mobile density problem" width="420">
+```
+
+Also keep a plain filename reference near the image for quick source lookup:
 
 ```md
-![Busy homepage rhythm](evidence/03-issue-busy-homepage-rhythm.png)
+- Evidence file: `evidence/03-issue-busy-homepage-rhythm.png`
 ```
+
+## Viewport / fullscreen standard
+For desktop analysis, use a maximized or effectively fullscreen browser state as the standard capture mode.
+If true fullscreen is not practical in the tool chain, use a large desktop viewport that approximates fullscreen review.
+Recommended baseline:
+- desktop analysis viewport: around 1440–1600px wide
+- mobile analysis viewport: around 390px wide
+
+The goal is to inspect the site in a realistic, roomy desktop context before making judgments about hierarchy, clutter, rhythm, or polish.
 
 ## Notes
 The point is not volume. A small set of sharp evidence is more convincing than dumping ten generic full-page screenshots.

@@ -19,6 +19,8 @@
 
 - **Mode:** Primarily **rendered-page/browser inspection** of the live site, plus text extraction from the public homepage.
 - **Tools used:** OpenClaw browser tool, rendered screenshots, web fetch, targeted Playwright evidence capture.
+- **Desktop review standard:** Large desktop viewport approximating a maximized/fullscreen browsing context.
+- **Mobile review standard:** Phone-sized viewport with a separate mobile pass and dedicated screenshots.
 - **Confidence:** **Moderate**
 - **Limits:**
   - I was able to inspect the real rendered site experience.
@@ -49,7 +51,10 @@
 ## 4. Evidence Gallery
 
 ### First impression / hero
-- Evidence: `evidence/01-hero-first-impression.png`
+- Evidence file: `evidence/01-hero-first-impression.png`
+
+<img src="evidence/01-hero-first-impression.png" alt="ADLG hero first impression" width="900">
+
 - What it shows:
   - A homepage opening that immediately combines video/media, multiple calls to action, and a content-heavy transition into the rest of the page.
 - Why it matters:
@@ -58,7 +63,10 @@
   - Simplify the opening sequence, tighten the message hierarchy, and reduce competing visual inputs in the first screenful.
 
 ### Trust / credibility signal
-- Evidence: `evidence/02-trust-team-and-testimonials.png`
+- Evidence file: `evidence/02-trust-team-and-testimonials.png`
+
+<img src="evidence/02-trust-team-and-testimonials.png" alt="ADLG trust section showing team and testimonials" width="900">
+
 - What it shows:
   - Strong proof-of-scale material: visible team depth, social proof, and signs of a sizable operation.
 - Why it matters:
@@ -67,7 +75,10 @@
   - Keep these trust assets, but integrate them into a calmer, more deliberate narrative flow.
 
 ### Weakness / UX issue #1
-- Evidence: `evidence/03-issue-busy-homepage-rhythm.png`
+- Evidence file: `evidence/03-issue-busy-homepage-rhythm.png`
+
+<img src="evidence/03-issue-busy-homepage-rhythm.png" alt="ADLG busy homepage rhythm issue" width="900">
+
 - What it shows:
   - A stacked sequence of sections that keeps shifting topic and format: legal service framing, support content, resource/media elements, and promotional modules.
 - Why it matters:
@@ -76,7 +87,10 @@
   - Reduce module count on the homepage, group related content more clearly, and build a stronger section rhythm from reassurance → authority → next step.
 
 ### Weakness / UX issue #2
-- Evidence: `evidence/04-bug-video-fallback-state.png`
+- Evidence file: `evidence/04-bug-video-fallback-state.png`
+
+<img src="evidence/04-bug-video-fallback-state.png" alt="ADLG video fallback state issue" width="900">
+
 - What it shows:
   - The visible “Your browser does not support the video tag” fallback state surfaced during rendered inspection.
 - Why it matters:
@@ -85,7 +99,10 @@
   - Replace with a controlled static fallback image/poster state and remove any raw fallback copy from the rendered experience.
 
 ### CTA / consultation section
-- Evidence: `evidence/05-cta-consultation-section.png`
+- Evidence file: `evidence/05-cta-consultation-section.png`
+
+<img src="evidence/05-cta-consultation-section.png" alt="ADLG consultation CTA section" width="900">
+
 - What it shows:
   - A clear consultation-oriented conversion area near the lower portion of the page.
 - Why it matters:
@@ -93,14 +110,41 @@
 - Suggested improvement:
   - Make the path to consultation feel more direct earlier in the experience, with less narrative clutter before the user gets there.
 
-### Mobile impression
-- Evidence: `evidence/06-mobile-density-problem.png`
+### Mobile first impression
+- Evidence file: `evidence/07-mobile-first-impression.png`
+
+<img src="evidence/07-mobile-first-impression.png" alt="ADLG mobile first impression" width="420">
+
 - What it shows:
-  - On mobile, the page density and section stacking become more noticeable, with long vertical flow and multiple competing content types.
+  - The mobile opening compresses the site’s already busy hierarchy into a narrow vertical experience.
 - Why it matters:
-  - Mobile visitors are especially vulnerable to overload; a trust-heavy service site should feel simpler, not denser, on a phone.
+  - On phone, the initial trust signal has less room to breathe, which makes the page feel denser faster.
 - Suggested improvement:
-  - Reduce homepage length, tighten copy, and prioritize the most persuasive trust/CTA elements for mobile users.
+  - Simplify the opening content stack and make the first mobile screens more singular and deliberate.
+
+### Mobile density / long-scroll issue
+- Evidence file: `evidence/09-mobile-long-scroll-density.png`
+
+<img src="evidence/09-mobile-long-scroll-density.png" alt="ADLG mobile long scroll density issue" width="420">
+
+- What it shows:
+  - Long vertical stacking of many content types, with repeated transitions between service framing, media, trust, and promotional material.
+- Why it matters:
+  - This increases cognitive fatigue and makes the mobile experience feel heavier than it should for a high-stress category.
+- Suggested improvement:
+  - Consolidate or remove lower-priority homepage modules for mobile users and shorten the scroll before the primary trust + CTA path.
+
+### Mobile CTA / contact flow
+- Evidence file: `evidence/08-mobile-cta-and-contact-flow.png`
+
+<img src="evidence/08-mobile-cta-and-contact-flow.png" alt="ADLG mobile CTA and contact flow" width="420">
+
+- What it shows:
+  - The mobile consultation/contact area exists, but it arrives after a long content journey.
+- Why it matters:
+  - The user has to absorb a lot before reaching the most important action.
+- Suggested improvement:
+  - Introduce a cleaner, earlier CTA path on mobile and reduce the need to scroll through multiple nonessential sections first.
 
 ## 5. Required Experience Dimensions
 
@@ -112,6 +156,7 @@
 - Evidence:
   - `evidence/01-hero-first-impression.png`
   - `evidence/03-issue-busy-homepage-rhythm.png`
+  - `evidence/07-mobile-first-impression.png`
 
 ### Readability / contrast
 - Generally readable, but not especially elegant.
@@ -120,7 +165,7 @@
 - Some sections feel like they ask for a lot of reading without enough visual quiet.
 - Evidence:
   - `evidence/03-issue-busy-homepage-rhythm.png`
-  - `evidence/06-mobile-density-problem.png`
+  - `evidence/09-mobile-long-scroll-density.png`
 
 ### Motion quality
 - There’s a video-heavy hero/media presence, and the page hints at a richer motion/media layer.
@@ -135,9 +180,10 @@
 - The page doesn’t move with clean narrative economy.
 - It goes from hero → service framing → video/help content → brand concept → book → resources → podcast → team → testimonials → contact → newsletter → offices.
 - That reads as **stacked accumulation**, not a tightly guided trust journey.
+- The same weakness becomes more pronounced on mobile because the user experiences it as a long sequence of stacked modules.
 - Evidence:
   - `evidence/03-issue-busy-homepage-rhythm.png`
-  - `evidence/06-mobile-density-problem.png`
+  - `evidence/09-mobile-long-scroll-density.png`
 
 ### Premium / trust feel
 - The site does create trust through **volume of evidence**.
@@ -146,14 +192,17 @@
 - Evidence:
   - `evidence/02-trust-team-and-testimonials.png`
   - `evidence/01-hero-first-impression.png`
+  - `evidence/07-mobile-first-impression.png`
 
 ### Calm vs. chaos
 - For a divorce/family-law firm, this matters a lot.
 - The site currently adds a bit of **cognitive load** where it should probably reduce it.
 - It’s not chaotic in a broken sense, but it is **too busy for a category where emotional steadiness is part of the product**.
+- This is even more noticeable on mobile.
 - Evidence:
   - `evidence/03-issue-busy-homepage-rhythm.png`
-  - `evidence/06-mobile-density-problem.png`
+  - `evidence/09-mobile-long-scroll-density.png`
+  - `evidence/08-mobile-cta-and-contact-flow.png`
 
 ## 6. Website / Digital Findings
 
@@ -165,6 +214,7 @@
 - Team scale is a meaningful trust signal; that’s a strength.
 - Testimonials and offices reinforce legitimacy.
 - The rendered experience suggests a **website credibility refresh opportunity**, not necessarily a full strategic rewrite from zero.
+- On mobile, the long-scroll narrative becomes even heavier, which likely weakens clarity and emotional steadiness for first-time visitors.
 - The site likely performs its basic job, but not with the level of composure that would best support premium trust conversion.
 
 ## 7. Business Quality Signals
@@ -217,6 +267,7 @@
   - clearer trust sequencing
   - stronger consultation path
   - reducing brand/message sprawl
+  - mobile-specific shortening and prioritization of the homepage flow
 
 ## 10. Suggested Path Forward
 
@@ -227,6 +278,7 @@
   - reducing visual/cognitive load
   - making the site feel more composed and trustworthy
   - aligning the digital front door with the seriousness of the firm
+  - improving the mobile trust and CTA path, not just the desktop homepage
 
 ## 11. Ballpark Budget Range
 
@@ -245,7 +297,7 @@
 
 ### Outreach angle summary
 
-ADLG appears strong and mature, but the homepage experience feels busier and less composed than the firm itself likely is. A restrained refresh could make the site feel calmer, clearer, and more trustworthy for people already under stress.
+ADLG appears strong and mature, but the homepage experience feels busier and less composed than the firm itself likely is. A restrained refresh could make the site feel calmer, clearer, and more trustworthy for people already under stress—especially on mobile.
 
 ### Personalized outreach email draft
 
@@ -253,7 +305,7 @@ Hi — I spent a little time looking through Atlanta Divorce Law Group’s site.
 
 My impression was that the firm itself comes across as substantial and well-developed, but the homepage experience feels busier than it needs to for a practice in such a trust-sensitive category. There’s a lot of strong material there — team depth, resources, testimonials, consultation flow — but the overall presentation doesn’t feel quite as calm or controlled as the firm likely is in real life.
 
-That kind of gap is often fixable without reinventing everything. Sometimes it’s mostly a matter of tightening hierarchy, reducing visual noise, and making the path from first impression to consultation feel more composed.
+That kind of gap is often fixable without reinventing everything. Sometimes it’s mostly a matter of tightening hierarchy, reducing visual noise, and making the path from first impression to consultation feel more composed — especially on mobile, where long stacked pages tend to feel even heavier.
 
 I run Kestrel Labs, and this is the sort of credibility/clarity work I help with on a selective basis. If useful, I’d be happy to send over a few concrete observations on what I’d simplify first.
 
@@ -263,10 +315,10 @@ Kestrel Labs
 
 ## 13. Internal Summary for CRM
 
-- **One-line summary:** Established Atlanta family-law firm with strong operational signals; website feels busier and less premium than the business likely is.
+- **One-line summary:** Established Atlanta family-law firm with strong operational signals; website feels busier and less premium than the business likely is, especially on mobile.
 - **Likely offer:** Website Credibility Refresh
 - **Disposition:** Pursue
-- **Next step:** Send tailored outreach focused on calmer trust flow, reduced homepage clutter, and stronger alignment between firm maturity and site presentation
+- **Next step:** Send tailored outreach focused on calmer trust flow, reduced homepage clutter, and stronger alignment between firm maturity and site presentation across desktop and mobile.
 
 ## Bottom line
 
@@ -279,3 +331,4 @@ If Kestrel goes after them, I’d keep the pitch narrow:
 - but:
   - **your firm feels more composed than your site**
   - **a calmer, sharper front door would likely serve you better**
+  - **that gap is even more noticeable on mobile**

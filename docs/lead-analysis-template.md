@@ -41,32 +41,67 @@ Use this template when writing a prospect review that includes screenshot eviden
 
 ## 4. Evidence Gallery
 
+> Embed screenshots directly in the markdown using HTML image tags so sizing stays consistent.
+> Recommended default widths:
+> - desktop screenshots: `width="900"`
+> - mobile screenshots: `width="420"`
+>
+> Example:
+>
+> ```html
+> <img src="evidence/01-hero-first-impression.png" alt="Hero first impression" width="900">
+> ```
+
 ### First impression / hero
-- Evidence: `evidence/01-hero-first-impression.png`
+- Evidence file: `evidence/01-hero-first-impression.png`
+- Embedded image:
+
+<img src="evidence/01-hero-first-impression.png" alt="Hero first impression" width="900">
+
 - Why it matters:
 
 ### Trust / credibility signal
-- Evidence: `evidence/02-trust-<label>.png`
+- Evidence file: `evidence/02-trust-<label>.png`
+- Embedded image:
+
+<img src="evidence/02-trust-<label>.png" alt="Trust and credibility signal" width="900">
+
 - Why it matters:
 
 ### Weakness / UX issue #1
-- Evidence: `evidence/03-issue-<label>.png`
+- Evidence file: `evidence/03-issue-<label>.png`
+- Embedded image:
+
+<img src="evidence/03-issue-<label>.png" alt="UX issue 1" width="900">
+
 - What it shows:
 - Why it matters:
 - Suggested improvement:
 
 ### Weakness / UX issue #2
-- Evidence: `evidence/04-issue-<label>.png`
+- Evidence file: `evidence/04-issue-<label>.png`
+- Embedded image:
+
+<img src="evidence/04-issue-<label>.png" alt="UX issue 2" width="900">
+
 - What it shows:
 - Why it matters:
 - Suggested improvement:
 
 ### CTA / contact flow
-- Evidence: `evidence/05-cta-<label>.png`
+- Evidence file: `evidence/05-cta-<label>.png`
+- Embedded image:
+
+<img src="evidence/05-cta-<label>.png" alt="CTA or contact flow" width="900">
+
 - Why it matters:
 
 ### Mobile issue or mobile impression
-- Evidence: `evidence/06-mobile-<label>.png`
+- Evidence file: `evidence/06-mobile-<label>.png`
+- Embedded image:
+
+<img src="evidence/06-mobile-<label>.png" alt="Mobile evidence" width="420">
+
 - Why it matters:
 
 ## 5. Required Experience Dimensions
