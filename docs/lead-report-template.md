@@ -10,6 +10,11 @@ Use this as the standard output format for prospect analysis.
 - **Location:**
 - **What they appear to do:**
 
+## Analysis Mode / Confidence
+- **Mode:** Rendered page / Browser-assisted / Raw-source only
+- **Tools used:**
+- **Confidence notes:**
+
 ## First Impression
 ### What feels strong
 - 
@@ -18,6 +23,25 @@ Use this as the standard output format for prospect analysis.
 - 
 
 ### Overall read
+- 
+
+## Required Experience Dimensions
+### Visual composure
+- 
+
+### Readability / contrast
+- 
+
+### Motion quality
+- 
+
+### Section rhythm / narrative flow
+- 
+
+### Premium / trust feel
+- 
+
+### Calm vs. chaos
 - 
 
 ## Website / Digital Findings
@@ -88,7 +112,8 @@ Kestrel Labs
 ---
 
 ## Notes for use
+- Prefer rendered-page analysis over raw-source inspection
+- If only raw-source inspection was available, state that plainly
 - Keep claims evidence-based
-- If information is uncertain, mark it clearly
 - Tailor the draft email to one visible issue only
 - Prefer a focused first offer over a broad transformation pitch

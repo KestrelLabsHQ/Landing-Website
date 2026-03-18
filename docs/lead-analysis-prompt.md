@@ -15,6 +15,17 @@ The tone should match Kestrel Labs:
 - understated
 - not salesy
 
+## Analysis Standard
+**Preferred method:** analyze the site from its **rendered experience**, not just raw HTML/DOM.
+Use a browser-capable workflow when available, such as:
+- ACP harness with browser capability
+- Playwright
+- browser MCP/tooling
+- screenshots or rendered-page inspection
+
+If rendered analysis is unavailable, say so explicitly and mark the result as lower-confidence.
+Do **not** present DOM-only inspection as equivalent to the real site experience.
+
 ## Minimal Inputs
 Provide as many of these as you have:
 - Business name
@@ -27,7 +38,7 @@ Provide as many of these as you have:
 - Optional notes / gut instincts
 
 ## Instructions to the agent
-Analyze the prospect using only the provided links and any clearly attributable public information you can gather from them.
+Analyze the prospect using the provided links and any clearly attributable public information you can gather from them.
 
 Do **not** invent contact details, claims, capabilities, or business facts.
 If information is uncertain, say so explicitly.
@@ -38,6 +49,7 @@ Focus on:
 3. inquiry/contact flow
 4. whether the business appears established and able to pay
 5. what kind of smaller Kestrel engagement would make sense first
+6. how the rendered site actually feels to a human visitor
 
 Prefer practical findings over abstract branding commentary.
 
@@ -49,12 +61,45 @@ Prefer practical findings over abstract branding commentary.
 - Apparent location
 - Short summary of what the business seems to do
 
-### 2. First Impression
+### 2. Analysis Mode / Confidence
+State:
+- whether the analysis was based on rendered-page inspection or raw page/source inspection
+- what tools were used
+- what confidence limitations apply
+
+### 3. First Impression
 - What feels strong
 - What feels weak
 - Does the business seem more credible than the website suggests?
 
-### 3. Website / Digital Findings
+### 4. Required Experience Dimensions
+These are mandatory. Comment on each.
+
+#### Visual composure
+- Does the site feel calm, controlled, and intentional?
+- Or crowded, noisy, chaotic, or uneven?
+
+#### Readability / contrast
+- Are key sections easy to read?
+- Any weak contrast, text-over-image issues, or visual strain?
+
+#### Motion quality
+- Do videos, animations, transitions, or parallax effects feel smooth and polished?
+- Or distracting, laggy, cheap, or awkward?
+
+#### Section rhythm / narrative flow
+- Does the page move naturally from one idea to the next?
+- Or does it feel like one topic transition after another without enough hierarchy?
+
+#### Premium / trust feel
+- Does the site feel more or less premium than the business likely is?
+- Does it make the business feel more trustworthy or less?
+
+#### Calm vs. chaos
+- Does the site reduce stress for the visitor or add to it?
+- Especially important for legal, medical, and trust-heavy categories.
+
+### 5. Website / Digital Findings
 Comment on only what is actually visible.
 Look for:
 - outdated design / dated trust signals
@@ -66,14 +111,14 @@ Look for:
 - performance / technical roughness if visible
 - signs that the site is underselling the business
 
-### 4. Business Quality Signals
+### 6. Business Quality Signals
 Assess:
 - professionalism
 - reputation indicators
 - signs of operational maturity
 - likely budget / seriousness
 
-### 5. Kestrel Fit Assessment
+### 7. Kestrel Fit Assessment
 Choose one:
 - Pursue
 - Maybe
@@ -81,7 +126,7 @@ Choose one:
 
 Then explain why in 3-6 bullets.
 
-### 6. Best First Offer
+### 8. Best First Offer
 Pick the most plausible first engagement:
 - Website Credibility Refresh
 - Contact & Intake Cleanup
@@ -91,18 +136,18 @@ Pick the most plausible first engagement:
 
 Also explain why this is the best first wedge.
 
-### 7. Suggested Path Forward
+### 9. Suggested Path Forward
 Give a practical recommendation for next step, for example:
 - outreach now
 - wait until more verification
 - only pursue with a highly specific angle
 - deprioritize
 
-### 8. Ballpark Budget Range
+### 10. Ballpark Budget Range
 Give an order-of-magnitude estimate in USD, with a short reason.
 Keep it realistic for small-business first engagements.
 
-### 9. Outreach Tailoring
+### 11. Outreach Tailoring
 Provide:
 - 2 possible subject lines
 - 1 short outreach angle summary
@@ -114,7 +159,7 @@ The email should:
 - point to one likely problem/opportunity
 - avoid hype and generic agency language
 
-### 10. Internal Summary for CRM
+### 12. Internal Summary for CRM
 Return a short block suitable for dropping into a lead tracker:
 - one-line summary
 - likely offer
@@ -143,15 +188,23 @@ Inputs:
 - Other links: <urls or none>
 - My notes: <optional>
 
-Use the Kestrel lead-analysis format and produce:
+Requirements:
+- Prefer rendered-page/browser analysis over DOM-only inspection.
+- State the analysis mode and confidence level clearly.
+- Treat these as required dimensions: visual composure, readability/contrast, motion quality, section rhythm/narrative flow, premium/trust feel, calm vs. chaos.
+- Then produce the Kestrel lead-analysis format.
+
+Return:
 1. Prospect Snapshot
-2. First Impression
-3. Website / Digital Findings
-4. Business Quality Signals
-5. Kestrel Fit Assessment
-6. Best First Offer
-7. Suggested Path Forward
-8. Ballpark Budget Range
-9. Outreach Tailoring
-10. Internal Summary for CRM
+2. Analysis Mode / Confidence
+3. First Impression
+4. Required Experience Dimensions
+5. Website / Digital Findings
+6. Business Quality Signals
+7. Kestrel Fit Assessment
+8. Best First Offer
+9. Suggested Path Forward
+10. Ballpark Budget Range
+11. Outreach Tailoring
+12. Internal Summary for CRM
 ```

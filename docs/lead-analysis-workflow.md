@@ -14,6 +14,20 @@ produce a high-quality lead brief that helps answer:
 - what would the work likely be worth?
 - what should the first outreach email say?
 
+## Key Principle
+**Rendered experience matters.**
+For Kestrel-style analysis, the agent should evaluate the site as a human would experience it whenever possible.
+
+Preferred analysis methods:
+- ACP harness with browser capability
+- Playwright
+- browser MCP/server
+- screenshots or rendered-page capture
+
+Fallback method:
+- raw-source / DOM inspection only when rendered analysis is unavailable
+- if fallback is used, confidence must be marked lower
+
 ## Recommended Workflow
 
 ### Step 1 — Intake
@@ -30,11 +44,22 @@ Create a small input packet for each business:
 Keep it lightweight.
 The goal is to make it easy to analyze a lead with minimal friction.
 
-### Step 2 — Analysis
+### Step 2 — Rendered Analysis First
+When browser-capable tooling exists, the agent should inspect:
+- homepage experience
+- section transitions
+- readability
+- motion/animation behavior
+- CTA flow
+- overall composure
+
+This should not rely solely on HTML structure.
+
+### Step 3 — Structured Report
 Use the prompt in `lead-analysis-prompt.md`.
 The agent should produce the report in `lead-report-template.md` format.
 
-### Step 3 — Human Decision Gate
+### Step 4 — Human Decision Gate
 Review the generated report and decide:
 - Pursue
 - Maybe
@@ -43,13 +68,13 @@ Review the generated report and decide:
 Do **not** fully automate sending.
 Use the agent to speed up judgment, not replace it.
 
-### Step 4 — Outreach Drafting
+### Step 5 — Outreach Drafting
 If the lead is worth pursuing:
 - use the tailored outreach draft
 - edit lightly
 - send manually
 
-### Step 5 — CRM Capture
+### Step 6 — CRM Capture
 Drop the internal summary into your lead tracker.
 Suggested fields:
 - Business name
@@ -63,12 +88,21 @@ Suggested fields:
 - Last contact date
 - Next action
 
-## Best Practices
-- Analyze 3-5 leads at a time, not 50
-- Focus on visible evidence
-- Prefer one concrete problem over a broad critique
-- Pitch a small first engagement
-- Avoid generic growth-language or agency voice
+## Required Experience Dimensions
+These should be mandatory in every serious lead review:
+1. Visual composure
+2. Readability / contrast
+3. Motion quality
+4. Section rhythm / narrative flow
+5. Premium / trust feel
+6. Calm vs. chaos
+
+These are especially important for trust-heavy categories like:
+- legal
+- accounting
+- medical / wellness
+- clinics
+- contractor/home services
 
 ## Best First Offers
 For Kestrel, default to one of these:
@@ -79,7 +113,7 @@ For Kestrel, default to one of these:
 
 ## Suggested Automation Level
 ### Good automation
-- Prospect analysis
+- Rendered-page analysis
 - Signal extraction
 - Lead brief generation
 - Pricing range suggestion
@@ -93,7 +127,7 @@ For Kestrel, default to one of these:
 - Relationship follow-up tone
 
 ## Suggested Operating Rhythm
-- Review 3-5 new leads per day or every other day
+- Review 3-5 new leads at a time
 - Send only the strongest 1-3 messages
 - Track replies and refine angles over time
 

@@ -22,11 +22,20 @@ Other links: <url list or none>
 My notes: <optional>
 
 Requirements:
-- Use only visible/publicly attributable information from the provided links and anything directly observable from them.
+- Prefer rendered-page/browser analysis over DOM-only inspection.
+- Use ACP, Playwright, browser MCP, screenshots, or other rendered-page tooling when available.
+- If rendered analysis is unavailable, say so clearly and lower confidence.
 - Do not invent contact details, business facts, or capabilities.
-- If something is uncertain, say so explicitly.
 - Keep the tone aligned with Kestrel Labs: selective, practical, founder-led, understated.
 - Prefer concrete findings over abstract branding commentary.
+
+Required experience dimensions (must assess each):
+- visual composure
+- readability / contrast
+- motion quality
+- section rhythm / narrative flow
+- premium / trust feel
+- calm vs. chaos
 
 Return the output in this exact structure:
 
@@ -36,28 +45,41 @@ Return the output in this exact structure:
 - Apparent location
 - What they appear to do
 
-2. First Impression
+2. Analysis Mode / Confidence
+- Whether analysis is based on rendered-page inspection or raw-source inspection
+- Tools used
+- Confidence limitations
+
+3. First Impression
 - What feels strong
 - What feels weak
 - Whether the business seems more credible than the website suggests
 
-3. Website / Digital Findings
+4. Required Experience Dimensions
+- Visual composure
+- Readability / contrast
+- Motion quality
+- Section rhythm / narrative flow
+- Premium / trust feel
+- Calm vs. chaos
+
+5. Website / Digital Findings
 - Messaging / positioning issues
 - Credibility / trust issues
 - Contact / intake friction
 - Technical / UX roughness
 - Signs the site may be underselling the business
 
-4. Business Quality Signals
+6. Business Quality Signals
 - Professionalism
 - Reputation / maturity signals
 - Likely budget / seriousness
 
-5. Kestrel Fit Assessment
+7. Kestrel Fit Assessment
 - Pursue / Maybe / Skip
 - 3-6 bullets explaining why
 
-6. Best First Offer
+8. Best First Offer
 Choose one:
 - Website Credibility Refresh
 - Contact & Intake Cleanup
@@ -67,19 +89,19 @@ Choose one:
 
 Then explain why that is the best first wedge.
 
-7. Suggested Path Forward
+9. Suggested Path Forward
 Give the practical next step.
 
-8. Ballpark Budget Range
+10. Ballpark Budget Range
 Give an order-of-magnitude estimate in USD and a short reason.
 
-9. Outreach Tailoring
+11. Outreach Tailoring
 Provide:
 - 2 subject line options
 - 1 outreach angle summary
 - 1 personalized first outreach email draft
 
-10. Internal Summary for CRM
+12. Internal Summary for CRM
 Give a short block with:
 - one-line summary
 - likely offer
