@@ -58,16 +58,14 @@ export default function AboutPage() {
             </p>
             <div className="mt-4 max-w-sm overflow-hidden border border-black/10 bg-neutral-100">
               <Image
-                src="/founder-placeholder.svg"
-                alt="Founder portrait placeholder for Kestrel Labs"
-                width={960}
-                height={1200}
+                src="/founder/founder-portrait.jpg"
+                alt="Founder of Kestrel Labs"
+                width={1400}
+                height={1750}
                 className="h-auto w-full object-cover"
+                priority
               />
             </div>
-            <p className="mt-4 max-w-sm text-sm leading-6 text-black/62">
-              Replace <span className="font-medium text-black">/public/founder-placeholder.svg</span> with a real founder photo when available to update this section site-wide.
-            </p>
           </div>
 
           <div className="grid gap-px bg-black/10">
