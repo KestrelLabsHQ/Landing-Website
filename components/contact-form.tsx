@@ -35,7 +35,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-5 bg-white p-6 md:grid-cols-2 md:p-8">
+    <form onSubmit={handleSubmit} className="grid gap-5 bg-white p-5 sm:p-6 md:grid-cols-2 md:p-8">
       <label className="grid gap-2 text-sm text-black/72">
         Name
         <input name="name" className="h-12 border border-black/14 px-4 outline-none transition-colors focus:border-black" type="text" placeholder="Your name" required />
@@ -60,7 +60,7 @@ export function ContactForm() {
         <textarea name="context" className="min-h-40 border border-black/14 px-4 py-3 outline-none transition-colors focus:border-black" placeholder="What are you trying to build, improve, stabilize, or understand?" required />
       </label>
       <div className="flex flex-col gap-3 md:col-span-2 md:flex-row md:items-center md:justify-between">
-        <button type="submit" className="border border-black bg-black px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-transparent hover:text-black">Compose Email</button>
+        <button type="submit" className="flex min-h-12 items-center justify-center border border-black bg-black px-6 py-3 text-center text-sm font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:bg-transparent hover:text-black">Compose Email</button>
         <p className="text-sm leading-6 text-black/56">
           {status === "ready"
             ? "Your email client should open with the inquiry details prefilled."

@@ -21,8 +21,8 @@ export function Principles() {
   return (
     <div className="grid gap-px border border-black/10 bg-black/10 md:grid-cols-2 xl:grid-cols-4">
       {principles.map((item) => (
-        <article key={item.title} className="bg-white p-6 md:p-7">
-          <h3 className="text-xl font-semibold tracking-[-0.03em]">{item.title}</h3>
+        <article key={item.title} className="bg-white p-5 sm:p-6 md:p-7">
+          <h3 className="text-lg font-semibold tracking-[-0.03em] sm:text-xl">{item.title}</h3>
           <p className="mt-4 text-sm leading-6 text-black/68">{item.text}</p>
         </article>
       ))}

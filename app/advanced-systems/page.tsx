@@ -27,8 +27,8 @@ export default function AdvancedSystemsPage() {
       >
         <div className="grid gap-px border border-white/10 bg-white/10 lg:grid-cols-2 xl:grid-cols-3">
           {advancedSystems.map((item) => (
-            <article key={item.title} className="bg-neutral-950 p-6 md:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/45">{item.title}</p>
+            <article key={item.title} className="bg-neutral-950 p-5 sm:p-6 md:p-8">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/45 sm:text-xs sm:tracking-[0.24em]">{item.title}</p>
               <p className="mt-5 text-sm leading-6 text-white/74">{item.text}</p>
               <ul className="mt-6 space-y-3 border-t border-white/10 pt-6 text-sm text-white/82">
                 {item.bullets.map((bullet) => (

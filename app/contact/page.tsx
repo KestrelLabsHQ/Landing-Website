@@ -15,9 +15,9 @@ export default function ContactPage() {
       className="min-h-[calc(100svh-8rem)] bg-neutral-50"
     >
       <div className="grid gap-px border border-black/10 bg-black/10 lg:grid-cols-[1fr_1.1fr]">
-        <div className="bg-white p-6 md:p-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-black/45">Direct contact</p>
-          <a href="mailto:contact@kestrellabshq.com" className="mt-4 block break-all text-2xl font-semibold tracking-[-0.04em] text-black">contact@kestrellabshq.com</a>
+        <div className="bg-white p-5 sm:p-6 md:p-8">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-xs sm:tracking-[0.24em]">Direct contact</p>
+          <a href="mailto:contact@kestrellabshq.com" className="mt-4 block break-all text-xl font-semibold tracking-[-0.04em] text-black sm:text-2xl">contact@kestrellabshq.com</a>
           <p className="mt-5 max-w-md text-sm leading-6 text-black/68">
             Use the direct inbox for straightforward inquiries, or use the form to open a prefilled project email with the core details already structured.
           </p>

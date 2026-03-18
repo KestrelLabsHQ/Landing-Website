@@ -14,7 +14,7 @@ export default function AboutPage() {
       className="min-h-[calc(100svh-8rem)]"
     >
       <div className="grid gap-px border border-black/10 bg-black/10 lg:grid-cols-[1.1fr_0.9fr]">
-        <article className="bg-white p-6 md:p-8">
+        <article className="bg-white p-5 sm:p-6 md:p-8">
           <p className="text-sm leading-7 text-black/72">
             The firm’s approach is straightforward: understand the system, reduce unnecessary complexity, and build solutions that remain usable after the initial excitement wears off. That applies whether the work is a marketing site, an internal workflow tool, backend stabilization, or a more demanding reliability-oriented effort.
           </p>
@@ -26,7 +26,7 @@ export default function AboutPage() {
             "Comfortable in business-facing and technical environments",
             "Built to support clear execution, not churn",
           ].map((item) => (
-            <div key={item} className="bg-white p-6 text-sm leading-6 text-black/76 md:p-8">{item}</div>
+            <div key={item} className="bg-white p-5 text-sm leading-6 text-black/76 sm:p-6 md:p-8">{item}</div>
           ))}
         </div>
       </div>

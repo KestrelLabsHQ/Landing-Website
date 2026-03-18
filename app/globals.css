@@ -21,10 +21,26 @@ body {
   margin: 0;
   background: #ffffff;
   color: #0a0a0a;
+  text-wrap: pretty;
 }
 
 a {
   text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }
 
 ::selection {

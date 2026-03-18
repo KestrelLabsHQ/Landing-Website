@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { BrandMark } from "@/components/brand-mark";
+import { MobileNav } from "@/components/mobile-nav";
 import { navigation } from "@/content/navigation";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-white/88 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
-        <Link href="/" className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.24em] text-black">
+    <header className="sticky top-0 z-40 border-b border-black/10 bg-white/88 backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 md:px-10">
+        <Link href="/" className="flex min-w-0 items-center gap-3 text-sm font-semibold uppercase tracking-[0.22em] text-black">
           <BrandMark className="h-9 w-9 shrink-0" />
-          <span>Kestrel Labs</span>
+          <span className="truncate">Kestrel Labs</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
@@ -25,23 +26,7 @@ export function SiteHeader() {
           </Link>
         </div>
 
-        <details className="group md:hidden">
-          <summary className="flex list-none items-center gap-2 border border-black px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] marker:hidden">
-            Menu
-          </summary>
-          <div className="absolute left-0 right-0 top-full border-b border-black/10 bg-white">
-            <nav className="mx-auto grid max-w-7xl gap-px border-t border-black/10 bg-black/10 px-6 md:px-10">
-              {navigation.map((item) => (
-                <Link key={item.href} href={item.href} className="bg-white px-0 py-4 text-sm font-medium text-black">
-                  {item.label}
-                </Link>
-              ))}
-              <Link href="/contact" className="bg-white px-0 py-4 text-sm font-medium text-black">
-                Contact
-              </Link>
-            </nav>
-          </div>
-        </details>
+        <MobileNav />
       </div>
     </header>
   );
