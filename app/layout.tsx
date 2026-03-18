@@ -24,11 +24,17 @@ export const metadata: Metadata = {
   description:
     "Dependable digital systems for growing businesses, from polished websites and internal tools to demanding software and infrastructure work.",
   applicationName: "Kestrel Labs",
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "Kestrel Labs",
+    "Kestrel Labs LLC",
     "Atlanta software engineering",
+    "Atlanta web design",
     "website design",
     "internal tools",
+    "software engineering",
     "infrastructure support",
     "advanced systems",
   ],
@@ -39,12 +45,21 @@ export const metadata: Metadata = {
     url: "https://kestrellabshq.com",
     siteName: "Kestrel Labs",
     type: "website",
+    images: [
+      {
+        url: "/og-image",
+        width: 1200,
+        height: 630,
+        alt: "Kestrel Labs LLC",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Kestrel Labs LLC",
     description:
       "Dependable digital systems for growing businesses, from polished websites and internal tools to demanding software and infrastructure work.",
+    images: ["/og-image"],
   },
 };
 
