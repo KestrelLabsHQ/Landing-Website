@@ -5,4 +5,4 @@ compatibility_date = "2026-03-17"
 [vars]
 ALLOWED_ORIGINS = "https://kestrellabshq.com,https://www.kestrellabshq.com"
 MAIL_TO = "contact@kestrellabshq.com"
-MAIL_FROM = "Kestrel Labs <website@kestrellabshq.com>"
+MAIL_FROM = "Kestrel Labs <contact@kestrellabshq.com>"

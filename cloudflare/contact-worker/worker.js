@@ -38,31 +38,44 @@ const worker = {
         return json({ error: "Invalid email" }, 400, corsHeaders);
       }
 
-      const resendResponse = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${env.RESEND_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          from: env.MAIL_FROM,
-          to: [env.MAIL_TO],
-          reply_to: email,
-          subject: `Kestrel Labs inquiry — ${projectType}`,
-          text: [
-            `Name: ${name}`,
-            `Email: ${email}`,
-            `Project type: ${projectType}`,
-            "",
-            "Project context:",
-            context,
-          ].join("\n"),
-        }),
+      const internalResponse = await sendEmail(env, {
+        from: env.MAIL_FROM,
+        to: [env.MAIL_TO],
+        reply_to: email,
+        subject: `Kestrel Labs inquiry — ${projectType}`,
+        text: [
+          `Name: ${name}`,
+          `Email: ${email}`,
+          `Project type: ${projectType}`,
+          "",
+          "Project context:",
+          context,
+        ].join("\n"),
       });
 
-      if (!resendResponse.ok) {
-        const errorText = await resendResponse.text();
-        return json({ error: "Email send failed", details: errorText }, 502, corsHeaders);
+      if (!internalResponse.ok) {
+        const errorText = await internalResponse.text();
+        return json({ error: "Internal email send failed", details: errorText }, 502, corsHeaders);
+      }
+
+      const acknowledgmentResponse = await sendEmail(env, {
+        from: env.MAIL_FROM,
+        to: [email],
+        subject: "Received — Kestrel Labs",
+        text: [
+          "Thanks for reaching out — your note was received.",
+          "",
+          "I’ll take a look and follow up directly if it seems like we can help.",
+          "",
+          "— Daymian",
+          "Founder & Principal Engineer",
+          "Kestrel Labs",
+        ].join("\n"),
+      });
+
+      if (!acknowledgmentResponse.ok) {
+        const errorText = await acknowledgmentResponse.text();
+        return json({ error: "Acknowledgment email send failed", details: errorText }, 502, corsHeaders);
       }
 
       return json({ ok: true }, 200, corsHeaders);
@@ -78,6 +91,17 @@ const worker = {
     }
   },
 };
+
+async function sendEmail(env, payload) {
+  return fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${env.RESEND_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+}
 
 function getAllowedOrigins(env) {
   const raw = env.ALLOWED_ORIGINS || env.ALLOWED_ORIGIN || "*";
