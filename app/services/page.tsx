@@ -16,14 +16,14 @@ export default function ServicesPage() {
     >
       <div className="grid gap-px border border-black/10 bg-black/10 lg:grid-cols-2 lg:auto-rows-fr">
         {servicesPage.map((service) => (
-          <article key={service.title} className="grid h-full bg-white p-6 sm:p-7 md:p-9 lg:grid-rows-[6.5rem_6.75rem_auto_1fr]">
+          <article key={service.title} className="grid h-full bg-white p-6 sm:p-7 md:p-9 lg:grid-rows-[6rem_5.75rem_auto_1fr]">
             <div>
               <h2 className="max-w-[16ch] text-2xl font-semibold tracking-[-0.04em] sm:text-[2rem] md:text-3xl">
                 {service.title}
               </h2>
             </div>
 
-            <div className="pt-5">
+            <div className="pt-3">
               <p className="max-w-2xl text-sm leading-7 text-black/68">{service.description}</p>
             </div>
 
