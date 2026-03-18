@@ -173,6 +173,17 @@ Return a short block suitable for dropping into a lead tracker:
 - Do not overstate certainty
 - Avoid sounding like a consultant parody
 
+## Evidence Capture Preference
+When browser tooling is available, include more than one generic page screenshot.
+Capture and reference screenshots of:
+- hero / first-impression area
+- one or more sections that support trust/credibility
+- specific UX/UI problems worth calling out
+- any visible bugs, broken states, awkward overlays, poor hierarchy, or weak CTA flow
+- at least one example of a suggested improvement opportunity
+
+If possible, name the screenshots clearly so they can be dropped into a report as supporting evidence rather than just archived as raw capture output.
+
 ## Copy/Paste Prompt Template
 
 ```text

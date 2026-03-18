@@ -70,3 +70,13 @@ After this works reliably, the best upgrades are:
 2. lightweight console/network logging for broken assets or obvious client-side issues
 3. callout/annotation workflow on screenshots
 4. integration into an ACP/browser workflow later
+
+## Reporting standard
+For actual lead reports, prefer a small evidence set instead of only one full-page capture.
+Try to include:
+- hero / first-impression screenshot
+- one strong trust signal screenshot
+- one or more screenshots of weak UX/UI, clutter, hierarchy issues, or broken/awkward states
+- one contact / CTA flow screenshot
+
+This makes the report more persuasive because the critique is visibly grounded in the rendered experience.
