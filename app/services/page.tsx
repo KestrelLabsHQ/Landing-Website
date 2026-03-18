@@ -16,13 +16,15 @@ export default function ServicesPage() {
     >
       <div className="grid gap-px border border-black/10 bg-black/10 lg:grid-cols-2">
         {servicesPage.map((service) => (
-          <article key={service.title} className="bg-white p-5 sm:p-6 md:p-8">
-            <h2 className="text-2xl font-semibold tracking-[-0.04em] sm:text-[2rem] md:text-3xl">{service.title}</h2>
-            <p className="mt-4 text-sm leading-6 text-black/68">{service.description}</p>
-            <div className="mt-8 grid gap-6 sm:gap-8 md:grid-cols-3">
+          <article key={service.title} className="bg-white p-6 sm:p-7 md:p-9">
+            <h2 className="max-w-[16ch] text-2xl font-semibold tracking-[-0.04em] sm:text-[2rem] md:text-3xl">
+              {service.title}
+            </h2>
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-black/68">{service.description}</p>
+            <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_1fr] lg:gap-x-10 lg:gap-y-8">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-xs sm:tracking-[0.24em]">What it helps with</p>
-                <ul className="mt-3 space-y-2 text-sm text-black/78">
+                <ul className="mt-3 space-y-2 text-sm leading-6 text-black/78">
                   {service.helpsWith.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -30,11 +32,11 @@ export default function ServicesPage() {
               </div>
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-xs sm:tracking-[0.24em]">Who it’s for</p>
-                <p className="mt-3 text-sm leading-6 text-black/78">{service.for}</p>
+                <p className="mt-3 max-w-md text-sm leading-7 text-black/78">{service.for}</p>
               </div>
-              <div>
+              <div className="lg:col-span-2 lg:max-w-xl">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-xs sm:tracking-[0.24em]">Outcome</p>
-                <p className="mt-3 text-sm leading-6 text-black/78">{service.outcome}</p>
+                <p className="mt-3 text-sm leading-7 text-black/78">{service.outcome}</p>
               </div>
             </div>
           </article>
