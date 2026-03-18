@@ -3,21 +3,21 @@ export const homeServices = [
     index: "01",
     title: "Websites",
     description:
-      "Clean, credible marketing sites and rebuilds that help a business look established, communicate clearly, and convert attention into real conversations.",
+      "Credible marketing sites and rebuilds that help a business look established, explain itself clearly, and turn attention into qualified conversations.",
     bullets: [
-      "Positioning and structure that are easier to understand",
+      "Sharper positioning, structure, and messaging",
       "Visual refreshes without startup-template baggage",
-      "Launchable, maintainable front-end implementation",
+      "Launchable, maintainable implementation built to last",
     ],
   },
   {
     index: "02",
     title: "Internal Tools",
     description:
-      "Purpose-built software for the work behind the scenes: workflows, dashboards, task handling, approvals, and the operational glue teams depend on.",
+      "Purpose-built software for the work behind the scenes: workflows, dashboards, approvals, task handling, and the operational glue teams depend on.",
     bullets: [
       "Replace spreadsheet chaos and manual handoffs",
-      "Match the tool to the actual process, not the other way around",
+      "Match the tool to the real process, not the other way around",
       "Improve visibility, consistency, and throughput",
     ],
   },
@@ -27,9 +27,9 @@ export const homeServices = [
     description:
       "Support for systems that need sharper engineering judgment: backend improvements, stabilization work, integrations, deployment, and operational hardening.",
     bullets: [
-      "Untangle brittle services and recurring outages",
-      "Improve reliability and observability",
-      "Build calmer systems that are easier to operate",
+      "Untangle brittle services and recurring issues",
+      "Improve reliability, observability, and control",
+      "Build calmer systems that are easier to operate under load",
     ],
   },
 ];
@@ -38,16 +38,16 @@ export const servicesPage = [
   {
     title: "Website Design & Rebuilds",
     description:
-      "Modern, credible sites for organizations that need to look sharp, communicate clearly, and move prospects toward contact.",
+      "Modern, credible sites for organizations that need to look sharp, communicate clearly, and move prospects toward contact with less friction.",
     helpsWith: ["Outdated websites", "Weak conversion paths", "Inconsistent presentation"],
     for: "Growing businesses, professional firms, and teams that need a better digital front door.",
     outcome:
-      "A site that feels established, reads clearly, and is easier to maintain after launch.",
+      "A site that feels established, reads clearly, and gives potential clients a better reason to reach out.",
   },
   {
     title: "Internal Tools",
     description:
-      "Operational software shaped around the way your team actually works, not around generic software assumptions.",
+      "Operational software shaped around the way your team actually works, not around generic software assumptions or bloated platforms.",
     helpsWith: ["Manual workflows", "Spreadsheet sprawl", "Fragmented task handling"],
     for: "Operations-heavy teams, service businesses, and organizations with repetitive internal processes.",
     outcome:
@@ -69,19 +69,19 @@ export const servicesPage = [
     helpsWith: ["Deployment issues", "Reliability problems", "Operational blind spots"],
     for: "Businesses that already have software in the field and need it to behave more predictably.",
     outcome:
-      "More stable systems, sharper visibility, and better readiness for growth or load.",
+      "More stable systems, sharper visibility, and better readiness for growth, load, or operational complexity.",
   },
 ];
 
 export const advancedSystems = [
   {
     title: "Applied R&D",
-    text: "Early-stage engineering efforts where fast prototyping matters, but so does knowing what to harden and what to discard.",
+    text: "Early-stage engineering efforts where speed matters, but so does knowing what deserves hardening, measurement, and long-term support.",
     bullets: ["Prototype quickly", "Evaluate signal from noise", "Harden the parts that matter"],
   },
   {
     title: "Telemetry",
-    text: "Instrumentation and runtime visibility for teams that need to understand what systems are actually doing under real conditions.",
+    text: "Instrumentation and runtime visibility for teams that need to understand what systems are actually doing under real conditions, not just in happy-path demos.",
     bullets: ["Event traces and metrics", "Operational visibility", "Runtime behavior analysis"],
   },
   {

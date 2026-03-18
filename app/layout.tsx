@@ -16,12 +16,36 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kestrellabshq.com"),
   title: {
     default: "Kestrel Labs LLC",
     template: "%s | Kestrel Labs LLC",
   },
   description:
     "Dependable digital systems for growing businesses, from polished websites and internal tools to demanding software and infrastructure work.",
+  applicationName: "Kestrel Labs",
+  keywords: [
+    "Kestrel Labs",
+    "Atlanta software engineering",
+    "website design",
+    "internal tools",
+    "infrastructure support",
+    "advanced systems",
+  ],
+  openGraph: {
+    title: "Kestrel Labs LLC",
+    description:
+      "Dependable digital systems for growing businesses, from polished websites and internal tools to demanding software and infrastructure work.",
+    url: "https://kestrellabshq.com",
+    siteName: "Kestrel Labs",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Kestrel Labs LLC",
+    description:
+      "Dependable digital systems for growing businesses, from polished websites and internal tools to demanding software and infrastructure work.",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
