@@ -27,6 +27,7 @@ Use this template when writing a prospect review that includes screenshot eviden
 - **Tools used:**
 - **Capture fidelity:** Raw/live capture by default; note any fallback/workaround if used
 - **Capture path:** Headless first; headed fallback for desktop if blocked
+- **Sitemap / capture plan:** Summarize what pages were discovered and which pages were selected for capture
 - **Confidence:**
 - **Limits:**
 
@@ -41,7 +42,14 @@ Use this template when writing a prospect review that includes screenshot eviden
 ### Does the business seem more credible than the website suggests?
 - 
 
-## 4. Evidence Gallery
+## 4. Sitemap / Capture Plan
+
+- **Sitemap source:**
+- **Pages discovered:**
+- **Pages selected for analysis:**
+- **Why these pages were chosen:**
+
+## 5. Evidence Gallery
 
 > Use standard markdown image embeds for normal evidence screenshots.
 > Keep image presentation consistent, but prefer renderer reliability over HTML-based sizing tricks.
@@ -122,7 +130,7 @@ Use this template when writing a prospect review that includes screenshot eviden
 
 - Why it matters:
 
-## 5. Required Experience Dimensions
+## 6. Required Experience Dimensions
 
 ### Visual composure
 - Assessment:
@@ -148,13 +156,13 @@ Use this template when writing a prospect review that includes screenshot eviden
 - Assessment:
 - Evidence:
 
-## 6. Website / Digital Findings
+## 7. Website / Digital Findings
 
 - 
 - 
 - 
 
-## 7. Business Quality Signals
+## 8. Business Quality Signals
 
 ### Positive signals
 - 
@@ -167,7 +175,7 @@ Use this template when writing a prospect review that includes screenshot eviden
 ### Caution
 - 
 
-## 8. Kestrel Fit Assessment
+## 9. Kestrel Fit Assessment
 
 **Decision:** <Pursue / Maybe / Skip>
 
@@ -176,7 +184,7 @@ Use this template when writing a prospect review that includes screenshot eviden
 - 
 - 
 
-## 9. Best First Offer
+## 10. Best First Offer
 
 **Best first engagement:** <offer>
 
@@ -185,18 +193,18 @@ Use this template when writing a prospect review that includes screenshot eviden
 - 
 - 
 
-## 10. Suggested Path Forward
+## 11. Suggested Path Forward
 
 - 
 - 
 - 
 
-## 11. Ballpark Budget Range
+## 12. Ballpark Budget Range
 
 - **Range:**
 - **Reason:**
 
-## 12. Outreach Tailoring
+## 13. Outreach Tailoring
 
 ### Possible subject lines
 - 
@@ -209,7 +217,7 @@ Use this template when writing a prospect review that includes screenshot eviden
 
 <draft>
 
-## 13. Internal Summary for CRM
+## 14. Internal Summary for CRM
 
 - **One-line summary:**
 - **Likely offer:**

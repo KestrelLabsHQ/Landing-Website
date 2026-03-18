@@ -81,6 +81,8 @@ Every screenshot included in a report should:
 
 ## Minimum evidence set per lead
 Aim for at least:
+- a sitemap or equivalent page inventory snapshot
+- a small capture plan selecting the most relevant pages
 - 1 full-page desktop screenshot
 - 1 full-page mobile screenshot
 - 1 hero screenshot

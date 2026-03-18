@@ -174,8 +174,17 @@ Return a short block suitable for dropping into a lead tracker:
 - Avoid sounding like a consultant parody
 
 ## Evidence Capture Preference
-When browser tooling is available, include more than one generic page screenshot.
-Capture and reference screenshots of:
+When browser tooling is available, do not limit analysis to the homepage by default.
+Start by retrieving the sitemap (or, if unavailable, an equivalent navigational page inventory) and create a small capture plan before taking screenshots.
+
+The capture plan should identify the most relevant pages to inspect, such as:
+- homepage
+- primary service page
+- about / team / doctor page
+- contact / appointment / intake page
+- any especially important trust or conversion page visible in the sitemap
+
+Then capture and reference screenshots of:
 - hero / first-impression area
 - one or more sections that support trust/credibility
 - specific UX/UI problems worth calling out
