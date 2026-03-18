@@ -196,16 +196,21 @@ If a technical bug prevents faithful capture and an override/workaround is neces
 - explain why it was necessary
 - treat that capture as lower-confidence than a clean raw capture
 
+If full-page capture has rendering edge cases (for example: carousels, overflow-heavy widgets, sticky UI, lazy-loaded assets, or background video):
+- prefer the most faithful raw method available rather than the simplest method
+- a raw pre-scroll/hydration pass is acceptable if needed to trigger lazy-loaded content before capture
+- if `fullPage: true` is visibly wrong, use a more faithful raw capture path and note that choice in the report when relevant
+
 In every final markdown report, include:
-- one full-page desktop screenshot
-- one full-page mobile screenshot
+- one full-page desktop screenshot asset
+- one full-page mobile screenshot asset
 - targeted evidence screenshots for specific strengths, issues, bugs, and CTA/contact findings
 
 In the final markdown report:
-- embed images directly in the report
-- keep image sizes consistent
-- use moderate widths so the screenshots are readable without dominating the document
-- include the source filename near each embedded image for easy lookup
+- embed shorter evidence screenshots directly in the report
+- link very long full-page screenshots instead of embedding them inline by default
+- prefer standard markdown image syntax for embedded screenshots when possible
+- keep the source filename near each embedded screenshot or full-page link for easy lookup
 
 If possible, name the screenshots clearly so they can be dropped into a report as supporting evidence rather than just archived as raw capture output.
 

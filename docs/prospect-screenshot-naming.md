@@ -91,21 +91,21 @@ Aim for at least:
 
 ## Suggested markdown reference style
 
-Prefer embedded HTML image tags so image widths stay consistent across reports.
+Prefer standard markdown image embeds for shorter evidence screenshots.
 
-Desktop example:
+Desktop/mobile evidence example:
 
-```html
-<img src="evidence/03-issue-busy-homepage-rhythm.png" alt="Busy homepage rhythm" width="900">
+```md
+![Busy homepage rhythm](evidence/03-issue-busy-homepage-rhythm.png)
 ```
 
-Mobile example:
+For very long full-page images, prefer links instead of inline embeds:
 
-```html
-<img src="evidence/06-mobile-density-problem.png" alt="Mobile density problem" width="420">
+```md
+- View source image: [00-fullpage-desktop-homepage.png](evidence/00-fullpage-desktop-homepage.png)
 ```
 
-Also keep a plain filename reference near the image for quick source lookup:
+Also keep a plain filename reference near the image or link for quick source lookup:
 
 ```md
 - Evidence file: `evidence/03-issue-busy-homepage-rhythm.png`
