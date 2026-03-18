@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { BrandMark } from "@/components/brand-mark";
 import { navigation } from "@/content/navigation";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <div className="md:hidden">
@@ -43,21 +45,30 @@ export function MobileNav() {
                 Navigation
               </p>
               <nav className="grid gap-3">
-                {navigation.map((item, index) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="group flex items-center justify-between border border-black/10 bg-white px-4 py-4 transition-colors hover:border-black hover:bg-black hover:text-white"
-                  >
-                    <span className="text-base font-medium tracking-[-0.02em] text-black transition-colors group-hover:text-white">
-                      {item.label}
-                    </span>
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/35 transition-colors group-hover:text-white/60">
-                      0{index + 1}
-                    </span>
-                  </Link>
-                ))}
+                {navigation.map((item, index) => {
+                  const isActive = pathname === item.href;
+
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      aria-current={isActive ? "page" : undefined}
+                      onClick={() => setOpen(false)}
+                      className={`group flex items-center justify-between border px-4 py-4 transition-colors ${
+                        isActive
+                          ? "border-black bg-black text-white"
+                          : "border-black/10 bg-white hover:border-black hover:bg-black hover:text-white"
+                      }`}
+                    >
+                      <span className={`text-base font-medium tracking-[-0.02em] transition-colors ${isActive ? "text-white" : "text-black group-hover:text-white"}`}>
+                        {item.label}
+                      </span>
+                      <span className={`text-[11px] font-semibold uppercase tracking-[0.22em] transition-colors ${isActive ? "text-white/60" : "text-black/35 group-hover:text-white/60"}`}>
+                        0{index + 1}
+                      </span>
+                    </Link>
+                  );
+                })}
               </nav>
             </div>
 
