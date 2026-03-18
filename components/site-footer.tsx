@@ -1,0 +1,27 @@
+import Link from "next/link";
+import { navigation } from "@/content/navigation";
+
+export function SiteFooter() {
+  return (
+    <footer className="border-t border-white/10 bg-black text-white">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 md:grid-cols-[1.2fr_0.8fr] md:px-10">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/55">Kestrel Labs LLC</p>
+          <p className="mt-4 max-w-xl text-sm leading-6 text-white/72">
+            Dependable digital systems for growing businesses, with room for deeper engineering work when the stakes are higher.
+          </p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {navigation.map((item) => (
+            <Link key={item.href} href={item.href} className="text-sm text-white/72 transition-colors hover:text-white">
+              {item.label}
+            </Link>
+          ))}
+          <a href="mailto:hello@kestrellabs.co" className="text-sm text-white/72 transition-colors hover:text-white">
+            hello@kestrellabs.co
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+}
