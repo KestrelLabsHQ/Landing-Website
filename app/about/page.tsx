@@ -55,7 +55,7 @@ export default function AboutPage() {
           <div className="bg-white p-5 sm:p-6 md:p-8">
             <div className="mt-1 max-w-sm border border-black/12 bg-neutral-100 p-[6px] sm:p-2">
               <div className="overflow-hidden border border-black/10 bg-white">
-                <div className="border-b border-black/10 bg-white/92 px-4 py-3 backdrop-blur-sm">
+                <div className="border-b border-black/10 bg-white/92 px-4 py-3 text-center backdrop-blur-sm">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-xs sm:tracking-[0.24em]">
                     Founder & Principal Engineer
                   </p>
@@ -68,8 +68,8 @@ export default function AboutPage() {
                   className="h-auto w-full object-cover"
                   priority
                 />
-                <div className="border-t border-black/10 bg-white/92 px-4 py-3 backdrop-blur-sm">
-                  <p className="text-sm font-medium leading-6 text-black/68 sm:text-[15px]">
+                <div className="border-t border-black/10 bg-white/92 px-4 py-3 text-center backdrop-blur-sm">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-xs sm:tracking-[0.24em]">
                     Daymian
                   </p>
                 </div>
