@@ -16,7 +16,7 @@ export default function ServicesPage() {
     >
       <div className="grid gap-px border border-black/10 bg-black/10 lg:grid-cols-2 lg:auto-rows-fr">
         {servicesPage.map((service) => (
-          <article key={service.title} className="grid h-full bg-white p-6 sm:p-7 md:p-9 lg:grid-rows-[6.5rem_8.5rem_auto_1fr]">
+          <article key={service.title} className="grid h-full bg-white p-6 sm:p-7 md:p-9 lg:grid-rows-[6.5rem_7.5rem_auto_1fr]">
             <div>
               <h2 className="max-w-[16ch] text-2xl font-semibold tracking-[-0.04em] sm:text-[2rem] md:text-3xl">
                 {service.title}
