@@ -13,8 +13,8 @@ export default function Home() {
         eyebrow="Atlanta / Software Systems / Infrastructure"
         title="Dependable digital systems for growing businesses."
         description="From polished websites and internal tools to more demanding software and infrastructure, Kestrel Labs brings research-grade engineering discipline to practical business problems."
-        primaryCta={{ label: "See Services", href: "/services" }}
-        secondaryCta={{ label: "Get in Touch", href: "/contact" }}
+        primaryCta={{ label: "Start a Project", href: "/contact" }}
+        secondaryCta={{ label: "See Services", href: "/services" }}
       />
 
       <SectionShell
