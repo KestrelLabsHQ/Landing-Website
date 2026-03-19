@@ -52,5 +52,6 @@ next-env.d.ts
 # Misc Ignores
 kestrel-evals/*
 prospect-captures/*
+prospect-runs/*
 public/audio/voice-tests/*
 generated/*

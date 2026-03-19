@@ -12,6 +12,9 @@
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "capture:site": "node prospect-tools/capture-site.js",
+    "prospect:source:maps": "node prospect-tools/source-google-maps.js",
+    "prospect:pipeline": "node prospect-tools/run-prospect-pipeline.js",
+    "prospect:sync:dolibarr": "node prospect-tools/sync-dolibarr.js",
     "audio:blog": "node scripts/generate-blog-audio.mjs",
     "audio:voices": "node scripts/generate-voice-snips.mjs"
   },
