@@ -4,24 +4,40 @@ require('dotenv').config({ path: path.resolve(process.cwd(), '.env'), quiet: tru
 
 function parseArgs(argv) {
   const args = {};
+
+  const assign = (key, value) => {
+    if (args[key] === undefined) {
+      args[key] = value;
+    } else if (Array.isArray(args[key])) {
+      args[key].push(value);
+    } else {
+      args[key] = [args[key], value];
+    }
+  };
+
   for (let i = 0; i < argv.length; i += 1) {
     const token = argv[i];
     if (!token.startsWith('--')) continue;
+
+    const eqIndex = token.indexOf('=');
+    if (eqIndex !== -1) {
+      const key = token.slice(2, eqIndex);
+      const value = token.slice(eqIndex + 1);
+      assign(key, value);
+      continue;
+    }
+
     const key = token.slice(2);
     const next = argv[i + 1];
     if (!next || next.startsWith('--')) {
       args[key] = true;
       continue;
     }
-    if (args[key] === undefined) {
-      args[key] = next;
-    } else if (Array.isArray(args[key])) {
-      args[key].push(next);
-    } else {
-      args[key] = [args[key], next];
-    }
+
+    assign(key, next);
     i += 1;
   }
+
   return args;
 }
 
