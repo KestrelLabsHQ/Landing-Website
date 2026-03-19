@@ -62,6 +62,29 @@ def check_json_schema(obj: Any, schema: Dict[str, Any]) -> Tuple[bool, str]:
     return False, "Unsupported schema (v1 supports only type=object)"
 
 
+def get_path(obj: Any, path: str) -> Any:
+    cur = obj
+    for part in path.split("."):
+        if isinstance(cur, dict) and part in cur:
+            cur = cur[part]
+        else:
+            return None
+    return cur
+
+
+def check_allowed_values(obj: Any, *, path: str, allowed: List[str]) -> Tuple[bool, str]:
+    value = get_path(obj, path)
+    if value is None:
+        return False, f"Path not found: {path}"
+    if not isinstance(value, list):
+        return False, f"Expected list at '{path}', got {type(value).__name__}"
+
+    bad = [v for v in value if not isinstance(v, str) or v not in allowed]
+    if bad:
+        return False, f"Disallowed values at '{path}': {bad}"
+    return True, "ok"
+
+
 def try_parse_json(text: str) -> Tuple[bool, Any, str]:
     try:
         return True, json.loads(text), "ok"

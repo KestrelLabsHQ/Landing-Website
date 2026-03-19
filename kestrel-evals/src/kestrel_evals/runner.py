@@ -3,7 +3,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
 
-from .checks import check_json_schema, check_regex, check_required_keys, try_parse_json
+from .checks import (
+    check_allowed_values,
+    check_json_schema,
+    check_regex,
+    check_required_keys,
+    try_parse_json,
+)
 from .models import EvalCase, EvalSuite
 from .providers.base import LLMProvider
 
@@ -48,6 +54,16 @@ async def run_suite(*, suite: EvalSuite, provider: LLMProvider, model: str) -> D
             elif chk.type == "regex":
                 ok2, msg2 = check_regex(out, chk.pattern or "")
                 checks_out.append({"type": "regex", "ok": ok2, "detail": msg2})
+                all_ok = all_ok and ok2
+
+            elif chk.type == "allowed_values":
+                ok, obj, msg = try_parse_json(out)
+                if not ok:
+                    checks_out.append({"type": "allowed_values", "ok": False, "detail": msg})
+                    all_ok = False
+                    continue
+                ok2, msg2 = check_allowed_values(obj, path=chk.path or "", allowed=chk.allowed or [])
+                checks_out.append({"type": "allowed_values", "ok": ok2, "detail": msg2})
                 all_ok = all_ok and ok2
 
             else:

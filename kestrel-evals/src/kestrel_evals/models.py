@@ -11,13 +11,16 @@ class PromptSpec(BaseModel):
 
 
 class EvalCheck(BaseModel):
-    type: Literal["json_schema", "required_keys", "regex"]
+    type: Literal["json_schema", "required_keys", "regex", "allowed_values"]
     # for json_schema
     json_schema: Optional[Dict[str, Any]] = None
     # for required_keys
     keys: Optional[List[str]] = None
     # for regex
     pattern: Optional[str] = None
+    # for allowed_values
+    path: Optional[str] = None  # e.g. "services"
+    allowed: Optional[List[str]] = None
 
 
 class EvalCase(BaseModel):

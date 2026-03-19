@@ -28,6 +28,8 @@ There’s a time and place for model-graded scoring, human review, and statistic
 
 For many workflows—especially extraction and routing—deterministic checks get you 80% of the value with 20% of the effort.
 
+In this post we’ll also enforce a controlled vocabulary for `services` (e.g. `website_upgrade`, `devops_platform`, `llm_evals`). That makes the output directly usable for routing and reporting.
+
 ## Example: sales lead intake extraction
 Imagine a pipeline that takes inbound email/webform text and extracts a consistent lead payload:
 

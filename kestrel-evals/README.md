@@ -25,7 +25,9 @@ kestrel-evals run examples/structured_extraction.yaml \
 ```
 
 ## Example suite format
-See [`examples/structured_extraction.yaml`](./examples/structured_extraction.yaml). (Note: JSON schema check key is `json_schema`.)
+See [`examples/structured_extraction.yaml`](./examples/structured_extraction.yaml).
+
+This example also demonstrates an `allowed_values` check for enforcing a controlled vocabulary (e.g., the `services` array).
 
 ## Roadmap
 - Provider abstraction + additional providers (Anthropic, Azure OpenAI, local/OpenAI-compatible)
