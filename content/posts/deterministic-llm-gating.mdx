@@ -1,0 +1,73 @@
+---
+title: "Deterministic LLM gating (Part 1): why contract tests come first"
+date: "2026-03-19"
+description: "If an LLM feature depends on structured output, validate the contract deterministically before you argue about quality."
+tags: ["llm", "reliability", "evaluation"]
+author: "daymian"
+series: "Deterministic LLM Gating"
+seriesOrder: 1
+---
+
+## BLUF
+If an LLM feature depends on a structured output contract, that contract should be testable in the same operational way as ordinary software: with deterministic checks, repeatable suites, and CI failure when the output breaks.
+
+That is the motivation behind `kestrel-evals`.
+
+The project is intentionally narrow. It is not trying to solve the entire LLM evaluation problem. It is trying to solve one common and operationally important part of it well: making contract-bound LLM behaviors observable, repeatable, and gateable.
+
+---
+
+## Introduction
+A large share of practical LLM failures do not first appear as subtle questions of quality. They appear as broken software behavior.
+
+A downstream system may expect valid JSON, a fixed set of top-level keys, empty strings rather than `null`, or a list field that contains only approved labels. When those assumptions are violated, the integration fails long before anyone has a chance to debate whether the response was insightful or well written.
+
+That observation is the starting point for this series. If an LLM output is part of a production workflow, then the output contract should be testable. And if it is testable, it should be possible to run those tests locally, in CI, and in a form that fails fast when the contract breaks.
+
+This framing matters because the industry conversation around LLM evaluation often broadens too quickly. It is common to jump to questions such as whether an answer is helpful, whether one model outperforms another, or whether a judge model would rate the output highly.
+
+Those are legitimate evaluation problems, but they are not always the first problems that matter. In many real systems, the first question is much less glamorous: did the model produce something the pipeline can safely consume?
+
+---
+
+## Why deterministic gating comes first
+For a broad class of workflows, deterministic checks deserve to be the first evaluation layer because the earliest and most expensive failures are mechanical.
+
+A model that returns markdown-wrapped JSON when the system expects raw JSON has failed, even if the payload inside is otherwise sensible. A classifier that emits a near-synonym instead of a valid controlled label has failed, even if a human would understand what it meant. A field that should be an array but arrives as a string has failed, regardless of whether the prose around it sounds competent.
+
+These are not cosmetic issues. They are contract violations. If the LLM sits inside a pipeline for parsing, routing, storage, or automation, they are often the difference between a working system and a broken one.
+
+Deterministic checks are well suited to these problems because they are both cheap and legible. A failed regex, missing key, or disallowed value is easy to understand. That clarity matters. Teams are far more likely to trust an evaluation harness when the failure mode is concrete and inspectable rather than buried inside an opaque scoring system.
+
+It also makes CI integration natural. If the question is whether the contract held, then the harness can behave like any other test runner and return a failing exit code when the answer is no.
+
+This does not make subjective evaluation unimportant. Rubric scoring, pairwise comparison, and model-as-judge approaches all have their place. The point is one of sequencing. It is usually a mistake to ask whether an answer is “good” before confirming that it is structurally valid.
+
+Deterministic gating is therefore not a replacement for all other evaluation methods. It is the right first layer for systems whose outputs must obey explicit mechanical constraints.
+
+---
+
+## Design goals and scope
+The design goal of `kestrel-evals` is deliberately constrained: define suites in a small, reviewable format; run them locally and in CI; check output contracts with deterministic logic; and fail quickly when those contracts are violated.
+
+The project is not trying to solve all evaluation problems at once. It is trying to make one common and useful pattern reliable enough to support development and deployment workflows.
+
+That focus is reflected in the current scope. The implementation supports YAML-defined suites, local execution, CI execution, deterministic checks, provider-backed generation through an OpenAI implementation, JSON report output, and non-zero exit behavior on failure.
+
+It does not yet attempt to provide a full benchmarking platform, a dataset registry, a judge-model workflow, comprehensive JSON Schema support, or broad provider parity. Those limitations are intentional. The project is small on purpose.
+
+---
+
+## Conclusion
+`kestrel-evals` is a deliberately small tool solving a real problem: making a class of LLM regressions testable in the same operational style as conventional software tests.
+
+Its central argument is simple. If an LLM feature depends on output structure, deterministic validation should be the first evaluation layer, and CI should be able to fail when that contract breaks.
+
+### So what?
+The practical implication is that teams do not have to choose between prompt engineering in the dark and building a giant evaluation platform. There is a useful middle ground.
+
+For contract-bound LLM features, a modest amount of structure goes a long way. Define the contract, codify the checks, run them locally, and gate CI on regressions.
+
+In Part 2, I’ll walk through the current implementation: the suite format, the runner, the checks, the example structured extraction suite, and baseline results.
+
+**Next:** [kestrel-evals (Part 2): a small harness for deterministic LLM gating](/blog/kestrel-evals-deterministic-gating)

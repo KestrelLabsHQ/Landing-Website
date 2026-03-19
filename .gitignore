@@ -48,3 +48,9 @@ next-env.d.ts
 .dev.vars*
 !.dev.vars.example
 !.env.example
+
+# Misc Ignores
+kestrel-evals/*
+prospect-captures/*
+public/audio/voice-tests/*
+generated/*
