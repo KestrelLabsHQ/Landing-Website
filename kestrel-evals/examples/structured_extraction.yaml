@@ -1,50 +1,50 @@
-name: "Structured extraction demo"
-description: "Extract a simple JSON object from short inbound emails. Designed for deterministic scoring in CI."
+name: "Sales lead intake extraction"
+description: "Extract a consistent JSON payload from messy inbound lead emails. Deterministic scoring for CI gating."
 
-# Fields:
-# - requester_name (string)
-# - requester_email (string)
-# - urgency (one of: low, medium, high)
+# Output keys (v1):
+# - lead_name (string)
+# - lead_email (string)
 # - summary (string)
+# - company (string, optional)
+# - budget (string, optional)
+# - timeline (string, optional)
+# - project_type (string, optional)
+#
+# Rule: return ALL keys. If a value is unknown, use an empty string.
 
 cases:
-  - id: "basic_checkout_down"
+  - id: "basic_new_site"
     prompt:
       system: |
         You are a careful information extraction system.
         Return ONLY valid JSON. No markdown. No extra text.
+        Return ALL keys. Use empty string for unknown values.
       user: |
-        Extract the fields from the email.
+        Extract lead fields from the email.
 
         Email:
         ---
-        Hi, this is Jordan Lee (jordan@example.com). Our checkout is down and customers can't pay.
-        Can someone take a look ASAP?
+        Hi, this is Jordan Lee (jordan@example.com). We're looking to redesign our website and add a booking form.
+        Timeline: next month.
+        Budget is flexible.
         ---
     checks:
-      - type: json_schema
-        json_schema:
-          type: object
-          required: [requester_name, requester_email, urgency, summary]
-          properties:
-            requester_name: { type: string }
-            requester_email: { type: string }
-            urgency: { type: string }
-            summary: { type: string }
+      - type: required_keys
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
       - type: regex
-        pattern: '"urgency"\s*:\s*"(low|medium|high)"'
+        pattern: '"lead_email"\s*:\s*"[^"]+@[^\"]+"'
 
   - id: "signature_block"
     prompt:
       system: |
-        Return ONLY valid JSON.
+        Return ONLY valid JSON. Return ALL keys.
       user: |
-        Extract the fields.
+        Extract lead fields.
 
         Email:
         ---
-        Hello team,
-        I'm seeing intermittent 500s on the /api/orders endpoint.
+        Hello,
+        We need help improving our site speed and converting more traffic.
 
         Thanks,
         Priya N.
@@ -52,222 +52,215 @@ cases:
         ---
     checks:
       - type: required_keys
-        keys: [requester_name, requester_email, urgency, summary]
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
       - type: regex
-        pattern: '"requester_email"\s*:\s*"[^"]+@[^\"]+"'
+        pattern: '"lead_email"\s*:\s*"[^"]+@[^\"]+"'
 
   - id: "multiple_people_in_thread"
     prompt:
       system: |
-        Return ONLY valid JSON.
+        Return ONLY valid JSON. Return ALL keys.
       user: |
-        Extract the requester (the person asking for help) from the email.
+        Extract the lead (the person requesting work) from the email.
 
         Email:
         ---
         CC'ing Alex and Sam.
-        Hi, I'm Morgan (morgan@acme.co) — can you update our invoice address and resend last month's invoice?
+        Hi, I'm Morgan (morgan@acme.co) — can you quote a website upgrade and ongoing maintenance?
         ---
     checks:
       - type: required_keys
-        keys: [requester_name, requester_email, urgency, summary]
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
 
   - id: "no_parentheses_email"
     prompt:
       system: |
-        Return ONLY valid JSON.
+        Return ONLY valid JSON. Return ALL keys.
       user: |
-        Extract the fields.
+        Extract lead fields.
 
         Email:
         ---
         Name: Taylor Kim
         Email: taylor.kim@foo.bar
-        Issue: Website is loading very slowly on mobile.
+        Company: FooBar Logistics
+        Looking for: landing page + contact form
         ---
     checks:
       - type: required_keys
-        keys: [requester_name, requester_email, urgency, summary]
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
 
-  - id: "high_urgency_words"
+  - id: "budget_and_timeline"
     prompt:
       system: |
-        Return ONLY valid JSON.
+        Return ONLY valid JSON. Return ALL keys.
       user: |
-        Extract the fields.
+        Extract lead fields.
 
         Email:
         ---
-        This is urgent — production is down. I'm Casey (casey@startup.io).
-        Nothing is working. Please help.
+        Hey—I'm Casey (casey@startup.io). We need a small marketing site for a product launch.
+        Budget: around $8-12k.
+        Timeline: 3-4 weeks.
         ---
     checks:
-      - type: regex
-        pattern: '"urgency"\s*:\s*"high"'
       - type: required_keys
-        keys: [requester_name, requester_email, urgency, summary]
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
 
-  - id: "low_urgency_feature_request"
+  - id: "low_detail"
     prompt:
       system: |
-        Return ONLY valid JSON.
+        Return ONLY valid JSON. Return ALL keys.
       user: |
-        Extract the fields.
+        Extract lead fields.
 
         Email:
         ---
-        Hey, I'm Drew (drew@client.com). When you have time, could we add a dark mode toggle to the dashboard?
-        No rush.
+        Hi, I'm Drew (drew@client.com). Are you taking on new web projects?
         ---
     checks:
-      - type: regex
-        pattern: '"urgency"\s*:\s*"low"'
       - type: required_keys
-        keys: [requester_name, requester_email, urgency, summary]
-
-  - id: "ambiguous_urgency"
-    prompt:
-      system: |
-        Return ONLY valid JSON.
-      user: |
-        Extract the fields. If urgency is unclear, choose "medium".
-
-        Email:
-        ---
-        Hi, it's Rene (rene@corp.net). We noticed some reports are missing a few rows.
-        Not sure when it started.
-        ---
-    checks:
-      - type: regex
-        pattern: '"urgency"\s*:\s*"medium"'
-      - type: required_keys
-        keys: [requester_name, requester_email, urgency, summary]
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
 
   - id: "weird_whitespace"
     prompt:
       system: |
-        Return ONLY valid JSON.
+        Return ONLY valid JSON. Return ALL keys.
       user: |
-        Extract the fields.
+        Extract lead fields.
 
         Email:
         ---
         Hi   
         I'm   Jamie   (jamie@example.com)   
-        Can you reset my password?   
+        Need a quote for a new site.   
         ---
     checks:
       - type: required_keys
-        keys: [requester_name, requester_email, urgency, summary]
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
 
   - id: "quoted_reply"
     prompt:
       system: |
-        Return ONLY valid JSON.
+        Return ONLY valid JSON. Return ALL keys.
       user: |
-        Extract the fields from the top message only (ignore quoted text).
+        Extract lead fields from the top message only (ignore quoted text).
 
         Email:
         ---
-        Hi, I'm Noor (noor@domain.com). The payment link in the last invoice gives a 404.
+        Hi, I'm Noor (noor@domain.com). We'd like help migrating our site to something easier to update.
 
         On Tue, someone wrote:
         > Previous conversation here...
         ---
     checks:
       - type: required_keys
-        keys: [requester_name, requester_email, urgency, summary]
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
 
   - id: "all_caps"
     prompt:
       system: |
-        Return ONLY valid JSON.
+        Return ONLY valid JSON. Return ALL keys.
       user: |
-        Extract the fields.
+        Extract lead fields.
 
         Email:
         ---
-        I'M CHRIS (CHRIS@EXAMPLE.COM). INVOICES ARE NOT SENDING. PLEASE FIX.
+        I'M CHRIS (CHRIS@EXAMPLE.COM). NEED A NEW WEBSITE. WHAT'S YOUR PRICING?
         ---
     checks:
       - type: required_keys
-        keys: [requester_name, requester_email, urgency, summary]
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
 
   - id: "plus_addressing"
     prompt:
       system: |
-        Return ONLY valid JSON.
+        Return ONLY valid JSON. Return ALL keys.
       user: |
-        Extract the fields.
+        Extract lead fields.
 
         Email:
         ---
-        Hi, this is Val (val+ops@company.com). Our webhook retries are piling up.
+        Hi, this is Val (val+ops@company.com). Looking for ongoing website support + small improvements.
         ---
     checks:
       - type: required_keys
-        keys: [requester_name, requester_email, urgency, summary]
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
 
   - id: "angle_brackets_email"
     prompt:
       system: |
-        Return ONLY valid JSON.
+        Return ONLY valid JSON. Return ALL keys.
       user: |
-        Extract the fields.
+        Extract lead fields.
 
         Email:
         ---
         From: "Harper" <harper@agency.dev>
-        Message: Can we get an ETA on the website upgrade?
+        Message: Can you send a proposal for a website upgrade and SEO cleanup?
         ---
     checks:
       - type: required_keys
-        keys: [requester_name, requester_email, urgency, summary]
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
 
-  - id: "two_emails_pick_requester"
+  - id: "two_emails_pick_lead"
     prompt:
       system: |
-        Return ONLY valid JSON.
+        Return ONLY valid JSON. Return ALL keys.
       user: |
-        Extract the requester (sender) from the email.
+        Extract the lead (sender) from the email.
 
         Email:
         ---
-        Hey, I'm Sky (sky@client.io). Please loop in billing: billing@client.io.
-        We need a copy of all invoices for Q1.
+        Hey, I'm Sky (sky@client.io). Please also CC billing: billing@client.io.
+        We'd like a quote for a new marketing site.
         ---
     checks:
       - type: required_keys
-        keys: [requester_name, requester_email, urgency, summary]
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
 
   - id: "non_english_name"
     prompt:
       system: |
-        Return ONLY valid JSON.
+        Return ONLY valid JSON. Return ALL keys.
       user: |
-        Extract the fields.
+        Extract lead fields.
 
         Email:
         ---
-        Hi, I'm Łukasz (lukasz@eu.example). Our staging site certificate expired.
+        Hi, I'm Łukasz (lukasz@eu.example). Interested in a bilingual site refresh.
         ---
     checks:
       - type: required_keys
-        keys: [requester_name, requester_email, urgency, summary]
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
 
   - id: "very_short"
     prompt:
       system: |
-        Return ONLY valid JSON.
+        Return ONLY valid JSON. Return ALL keys.
       user: |
-        Extract the fields. If urgency is unclear, choose "medium".
+        Extract lead fields.
 
         Email:
         ---
-        Pat (pat@x.com) — need help.
+        Pat (pat@x.com) — need a website quote.
         ---
     checks:
       - type: required_keys
-        keys: [requester_name, requester_email, urgency, summary]
-      - type: regex
-        pattern: '"urgency"\s*:\s*"medium"'
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
+
+  - id: "company_mentioned_in_body"
+    prompt:
+      system: |
+        Return ONLY valid JSON. Return ALL keys.
+      user: |
+        Extract lead fields.
+
+        Email:
+        ---
+        Hi, I'm Rowan (rowan@brightleaf.io) from Brightleaf.
+        We're looking for a new site and a simple CMS we can update ourselves.
+        ---
+    checks:
+      - type: required_keys
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]

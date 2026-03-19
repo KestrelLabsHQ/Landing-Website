@@ -6,6 +6,7 @@ This post shows a minimal, practical approach: **deterministic evals** you can r
 
 - Target audience: CTOs and senior engineers
 - Use case: **sales lead intake extraction**
+- Tone: calm/technical
 - Model used in examples: `gpt-4.1-mini`
 
 ## The core idea
@@ -28,14 +29,17 @@ There’s a time and place for model-graded scoring, human review, and statistic
 For many workflows—especially extraction and routing—deterministic checks get you 80% of the value with 20% of the effort.
 
 ## Example: sales lead intake extraction
-Imagine a pipeline that takes inbound email/webform text and extracts:
+Imagine a pipeline that takes inbound email/webform text and extracts a consistent lead payload:
 
-- `requester_name`
-- `requester_email`
-- `urgency` (low/medium/high)
+- `lead_name`
+- `lead_email`
+- `company` (optional)
+- `budget` (optional)
+- `timeline` (optional)
+- `project_type` (optional)
 - `summary`
 
-Downstream systems assume the JSON is parseable and complete. When the model starts returning markdown, missing fields, or creative synonyms for enums, you get silent failure.
+Downstream systems assume the JSON is parseable and complete. When the model starts returning markdown, missing fields, or inconsistent keys/values, you get silent failure.
 
 So we make that contract explicit.
 
@@ -51,26 +55,21 @@ cases:
       system: |
         You are a careful information extraction system.
         Return ONLY valid JSON. No markdown. No extra text.
+        Return ALL keys. Use empty string for unknown values.
       user: |
-        Extract the fields from the email.
+        Extract lead fields from the email.
 
         Email:
         ---
-        Hi, this is Jordan Lee (jordan@example.com). Our checkout is down and customers can't pay.
-        Can someone take a look ASAP?
+        Hi, this is Jordan Lee (jordan@example.com). We're looking to redesign our website and add a booking form.
+        Timeline: next month.
+        Budget is flexible.
         ---
     checks:
-      - type: json_schema
-        json_schema:
-          type: object
-          required: [requester_name, requester_email, urgency, summary]
-          properties:
-            requester_name: { type: string }
-            requester_email: { type: string }
-            urgency: { type: string }
-            summary: { type: string }
+      - type: required_keys
+        keys: [lead_name, lead_email, summary, company, budget, timeline, project_type]
       - type: regex
-        pattern: '"urgency"\\s*:\\s*"(low|medium|high)"'
+        pattern: '"lead_email"\\s*:\\s*"[^\"]+@[^\\\"]+"'
 ```
 
 A good v1 suite is 15–30 cases, not 1–3. Your edge cases are where regressions hide:
@@ -119,7 +118,7 @@ In CI, the important behavior is: **failed checks fail the job**.
 ## Common regressions this catches immediately
 1) **Non-JSON output** (markdown, prose, code fences)
 2) **Missing required fields**
-3) **Enum drift** ("urgent" instead of "high")
+3) **Contract drift** (keys renamed, values moved, fields omitted)
 4) **Output verbosity creep** that breaks parsers
 
 ## Where to go next (v2+)
