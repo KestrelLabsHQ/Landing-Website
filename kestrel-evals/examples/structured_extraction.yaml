@@ -1,0 +1,33 @@
+name: "Structured extraction demo"
+description: "Extract a simple JSON object from a short inbound email."
+
+cases:
+  - id: "basic"
+    prompt:
+      system: |
+        You are a careful information extraction system.
+        Return ONLY valid JSON. No markdown. No extra text.
+      user: |
+        Extract the following fields from the email:
+        - requester_name (string)
+        - requester_email (string)
+        - urgency (one of: low, medium, high)
+        - summary (string)
+
+        Email:
+        ---
+        Hi, this is Jordan Lee (jordan@example.com). Our checkout is down and customers can't pay.
+        Can someone take a look ASAP?
+        ---
+    checks:
+      - type: json_schema
+        json_schema:
+          type: object
+          required: [requester_name, requester_email, urgency, summary]
+          properties:
+            requester_name: { type: string }
+            requester_email: { type: string }
+            urgency: { type: string }
+            summary: { type: string }
+      - type: regex
+        pattern: '"urgency"\s*:\s*"(low|medium|high)"'
