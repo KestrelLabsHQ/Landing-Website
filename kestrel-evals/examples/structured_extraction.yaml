@@ -1,18 +1,20 @@
 name: "Structured extraction demo"
-description: "Extract a simple JSON object from a short inbound email."
+description: "Extract a simple JSON object from short inbound emails. Designed for deterministic scoring in CI."
+
+# Fields:
+# - requester_name (string)
+# - requester_email (string)
+# - urgency (one of: low, medium, high)
+# - summary (string)
 
 cases:
-  - id: "basic"
+  - id: "basic_checkout_down"
     prompt:
       system: |
         You are a careful information extraction system.
         Return ONLY valid JSON. No markdown. No extra text.
       user: |
-        Extract the following fields from the email:
-        - requester_name (string)
-        - requester_email (string)
-        - urgency (one of: low, medium, high)
-        - summary (string)
+        Extract the fields from the email.
 
         Email:
         ---
@@ -31,3 +33,241 @@ cases:
             summary: { type: string }
       - type: regex
         pattern: '"urgency"\s*:\s*"(low|medium|high)"'
+
+  - id: "signature_block"
+    prompt:
+      system: |
+        Return ONLY valid JSON.
+      user: |
+        Extract the fields.
+
+        Email:
+        ---
+        Hello team,
+        I'm seeing intermittent 500s on the /api/orders endpoint.
+
+        Thanks,
+        Priya N.
+        priya.n@example.org
+        ---
+    checks:
+      - type: required_keys
+        keys: [requester_name, requester_email, urgency, summary]
+      - type: regex
+        pattern: '"requester_email"\s*:\s*"[^"]+@[^\"]+"'
+
+  - id: "multiple_people_in_thread"
+    prompt:
+      system: |
+        Return ONLY valid JSON.
+      user: |
+        Extract the requester (the person asking for help) from the email.
+
+        Email:
+        ---
+        CC'ing Alex and Sam.
+        Hi, I'm Morgan (morgan@acme.co) — can you update our invoice address and resend last month's invoice?
+        ---
+    checks:
+      - type: required_keys
+        keys: [requester_name, requester_email, urgency, summary]
+
+  - id: "no_parentheses_email"
+    prompt:
+      system: |
+        Return ONLY valid JSON.
+      user: |
+        Extract the fields.
+
+        Email:
+        ---
+        Name: Taylor Kim
+        Email: taylor.kim@foo.bar
+        Issue: Website is loading very slowly on mobile.
+        ---
+    checks:
+      - type: required_keys
+        keys: [requester_name, requester_email, urgency, summary]
+
+  - id: "high_urgency_words"
+    prompt:
+      system: |
+        Return ONLY valid JSON.
+      user: |
+        Extract the fields.
+
+        Email:
+        ---
+        This is urgent — production is down. I'm Casey (casey@startup.io).
+        Nothing is working. Please help.
+        ---
+    checks:
+      - type: regex
+        pattern: '"urgency"\s*:\s*"high"'
+      - type: required_keys
+        keys: [requester_name, requester_email, urgency, summary]
+
+  - id: "low_urgency_feature_request"
+    prompt:
+      system: |
+        Return ONLY valid JSON.
+      user: |
+        Extract the fields.
+
+        Email:
+        ---
+        Hey, I'm Drew (drew@client.com). When you have time, could we add a dark mode toggle to the dashboard?
+        No rush.
+        ---
+    checks:
+      - type: regex
+        pattern: '"urgency"\s*:\s*"low"'
+      - type: required_keys
+        keys: [requester_name, requester_email, urgency, summary]
+
+  - id: "ambiguous_urgency"
+    prompt:
+      system: |
+        Return ONLY valid JSON.
+      user: |
+        Extract the fields. If urgency is unclear, choose "medium".
+
+        Email:
+        ---
+        Hi, it's Rene (rene@corp.net). We noticed some reports are missing a few rows.
+        Not sure when it started.
+        ---
+    checks:
+      - type: regex
+        pattern: '"urgency"\s*:\s*"medium"'
+      - type: required_keys
+        keys: [requester_name, requester_email, urgency, summary]
+
+  - id: "weird_whitespace"
+    prompt:
+      system: |
+        Return ONLY valid JSON.
+      user: |
+        Extract the fields.
+
+        Email:
+        ---
+        Hi   
+        I'm   Jamie   (jamie@example.com)   
+        Can you reset my password?   
+        ---
+    checks:
+      - type: required_keys
+        keys: [requester_name, requester_email, urgency, summary]
+
+  - id: "quoted_reply"
+    prompt:
+      system: |
+        Return ONLY valid JSON.
+      user: |
+        Extract the fields from the top message only (ignore quoted text).
+
+        Email:
+        ---
+        Hi, I'm Noor (noor@domain.com). The payment link in the last invoice gives a 404.
+
+        On Tue, someone wrote:
+        > Previous conversation here...
+        ---
+    checks:
+      - type: required_keys
+        keys: [requester_name, requester_email, urgency, summary]
+
+  - id: "all_caps"
+    prompt:
+      system: |
+        Return ONLY valid JSON.
+      user: |
+        Extract the fields.
+
+        Email:
+        ---
+        I'M CHRIS (CHRIS@EXAMPLE.COM). INVOICES ARE NOT SENDING. PLEASE FIX.
+        ---
+    checks:
+      - type: required_keys
+        keys: [requester_name, requester_email, urgency, summary]
+
+  - id: "plus_addressing"
+    prompt:
+      system: |
+        Return ONLY valid JSON.
+      user: |
+        Extract the fields.
+
+        Email:
+        ---
+        Hi, this is Val (val+ops@company.com). Our webhook retries are piling up.
+        ---
+    checks:
+      - type: required_keys
+        keys: [requester_name, requester_email, urgency, summary]
+
+  - id: "angle_brackets_email"
+    prompt:
+      system: |
+        Return ONLY valid JSON.
+      user: |
+        Extract the fields.
+
+        Email:
+        ---
+        From: "Harper" <harper@agency.dev>
+        Message: Can we get an ETA on the website upgrade?
+        ---
+    checks:
+      - type: required_keys
+        keys: [requester_name, requester_email, urgency, summary]
+
+  - id: "two_emails_pick_requester"
+    prompt:
+      system: |
+        Return ONLY valid JSON.
+      user: |
+        Extract the requester (sender) from the email.
+
+        Email:
+        ---
+        Hey, I'm Sky (sky@client.io). Please loop in billing: billing@client.io.
+        We need a copy of all invoices for Q1.
+        ---
+    checks:
+      - type: required_keys
+        keys: [requester_name, requester_email, urgency, summary]
+
+  - id: "non_english_name"
+    prompt:
+      system: |
+        Return ONLY valid JSON.
+      user: |
+        Extract the fields.
+
+        Email:
+        ---
+        Hi, I'm Łukasz (lukasz@eu.example). Our staging site certificate expired.
+        ---
+    checks:
+      - type: required_keys
+        keys: [requester_name, requester_email, urgency, summary]
+
+  - id: "very_short"
+    prompt:
+      system: |
+        Return ONLY valid JSON.
+      user: |
+        Extract the fields. If urgency is unclear, choose "medium".
+
+        Email:
+        ---
+        Pat (pat@x.com) — need help.
+        ---
+    checks:
+      - type: required_keys
+        keys: [requester_name, requester_email, urgency, summary]
+      - type: regex
+        pattern: '"urgency"\s*:\s*"medium"'
