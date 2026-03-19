@@ -123,6 +123,17 @@ So his pragmatism has an aesthetic and ethical filter:
 
 That is a strong branding instinct.
 
+### 3.4 More plainspoken than initially modeled
+A later refinement from direct drafting work: Daymian’s strongest voice appears to be plainer and more direct than an initial “restrained/elegant” read might suggest.
+
+His natural style seems strongest when it sounds like:
+- a real operator
+- speaking plainly
+- making the business point clearly
+- without trying to sound particularly polished
+
+This matters because future writing for him should usually be tightened, not over-refined.
+
 ---
 
 ## 4. What Daymian seems to value
@@ -291,6 +302,10 @@ But in some contexts it may create tension with more traditional direct-response
 Daymian comes across as:
 
 > low-bullshit, high-taste, quietly ambitious
+
+### Updated shorthand after direct drafting review
+
+> plainspoken, commercially clear, low-bullshit, and more direct than polished
 
 ### Slightly fuller description
 

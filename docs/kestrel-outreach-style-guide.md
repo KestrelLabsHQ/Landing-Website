@@ -112,12 +112,14 @@ Good:
 - believable phrasing
 - a little asymmetry
 - slightly understated confidence
+- plainspoken business language
 
 Bad:
 - rigid polish
 - over-designed email voice
 - sales cadence
 - “AI-perfect” structure
+- sounding more like a copywriter than an operator
 
 ### 5.2 Confidence should come from specificity, not force
 Preferred confidence:

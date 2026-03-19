@@ -76,8 +76,13 @@ Make sure the upside is still clear.
 Quiet is good.
 Too quiet is not.
 
-### 13. Do not send anything I would cringe hearing out loud
+### 13. Keep the plainspoken/direct quality
+Do not polish it so much that it stops sounding like a real operator.
+Useful beats elegant.
+
+### 14. Do not send anything I would cringe hearing out loud
 If it sounds false when spoken, it is probably wrong.
+
 
 ---
 

@@ -28,6 +28,8 @@ Daymian should sound like:
 - specific
 - not desperate
 - not trying too hard
+- plainspoken
+- more operator-like than copywriter-like
 
 A good shorthand:
 
@@ -36,6 +38,10 @@ A good shorthand:
 Another good shorthand:
 
 > sharp, real, and commercially useful without sounding sales-trained
+
+Best refined shorthand:
+
+> plainspoken, commercially clear, low-bullshit, and more direct than polished
 
 ---
 
@@ -103,6 +109,8 @@ That means:
 - fewer generic “business email” phrases
 - less optimization-sounding language
 - more natural rhythm
+- more plainspoken sentences
+- less effort spent sounding elegant for its own sake
 
 ### 3.5 Keep local/founder signals subtle
 Do not force “I’m local” into the body unless it feels truly natural.
@@ -156,6 +164,8 @@ Atlanta, Georgia
 - compact
 - believable
 - precise without being stiff
+- plainspoken
+- useful before elegant
 
 ### Bad sentence qualities
 - overpolished
@@ -229,6 +239,7 @@ Countermeasure:
 ### Blind spot 2: overcorrecting toward understatement
 Countermeasure:
 - make sure the writing still carries a business case and does not become too quiet to matter
+- do not sand away the plainspoken/direct quality that makes the voice feel real
 
 ### Blind spot 3: refining too long before shipping
 Countermeasure:

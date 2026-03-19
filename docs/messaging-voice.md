@@ -23,6 +23,7 @@ That means:
 - avoid inflated strategic language
 - avoid “agency theater”
 - prefer plain, concrete statements
+- prefer operator language over copywriter polish when there is a choice
 
 Good:
 - “make the website work harder for the business”
@@ -193,6 +194,8 @@ If Kestrel were a person in a room, it would feel like:
 - specific
 - low-pressure
 - mildly confident
+- plainspoken
+- commercially clear
 
 ### Tone in first-touch outreach
 Use:
