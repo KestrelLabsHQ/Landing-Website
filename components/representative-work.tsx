@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const work = [
   {
     title: "Website repositioning for a growing local business",
@@ -29,11 +31,24 @@ const work = [
     outcome:
       "A calmer operating posture, fewer repeated reliability incidents, and a technical foundation that was easier to support without constant firefighting.",
   },
+  {
+    title: "tiny64os — public educational x86_64 operating-system project",
+    label: "Public engineering work",
+    situation:
+      "Built as a compact public systems project that others can inspect, build, and run, with the goal of making low-level engineering depth visible in a concrete and teachable form.",
+    approach:
+      "Implemented a minimal x86_64 operating system with GRUB/Multiboot2 boot, long-mode entry, interrupt handling, exception diagnostics, VGA console output, keyboard input, serial boot logging, and a tiny interactive shell.",
+    outcome:
+      "A public proof of systems-level competence that reflects the same engineering habits Kestrel brings to client work: clear architecture, disciplined debugging, and comfort below the application layer.",
+    link: "https://github.com/daymian/tiny64os",
+    linkLabel: "View repository",
+    note: "Published separately under the founder's personal GitHub.",
+  },
 ];
 
 export function RepresentativeWork() {
   return (
-    <div className="grid gap-px border border-black/10 bg-black/10 lg:grid-cols-3">
+    <div className="grid gap-px border border-black/10 bg-black/10 lg:grid-cols-2 xl:grid-cols-4">
       {work.map((item) => (
         <article key={item.title} className="bg-white p-5 sm:p-6 md:p-8">
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-xs sm:tracking-[0.24em]">{item.label}</p>
@@ -52,6 +67,20 @@ export function RepresentativeWork() {
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-xs sm:tracking-[0.24em]">Outcome</p>
               <p className="mt-2 text-sm leading-6 text-black/70">{item.outcome}</p>
             </div>
+
+            {item.link ? (
+              <div className="pt-2">
+                <Link
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex min-h-11 items-center justify-center border border-black/16 px-4 py-2 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-black transition-colors hover:border-black hover:bg-black hover:text-white"
+                >
+                  {item.linkLabel}
+                </Link>
+                {item.note ? <p className="mt-3 text-xs leading-6 text-black/52">{item.note}</p> : null}
+              </div>
+            ) : null}
           </div>
         </article>
       ))}
