@@ -34,8 +34,8 @@ const representativeWork = [
 ];
 
 const publicEngineeringWork = {
-  title: "tiny64os — public educational x86_64 operating-system project",
-  label: "Public engineering work",
+  title: "tiny64os — educational x86_64 operating-system project",
+  label: "Open-source systems work",
   situation:
     "Built as a compact public systems project that others can inspect, build, and run, with the goal of making low-level engineering depth visible in a concrete and teachable form.",
   approach:
