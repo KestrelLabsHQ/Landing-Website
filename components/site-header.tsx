@@ -42,7 +42,15 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-4 md:flex">
+          <a
+            href="https://www.holtr.ai"
+            target="_blank"
+            rel="noreferrer"
+            className="text-xs font-semibold uppercase tracking-[0.22em] text-black/60 transition-colors hover:text-black"
+          >
+            HOLTR
+          </a>
           <Link href="/contact" className="border border-black px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition-colors hover:bg-black hover:text-white">
             Contact
           </Link>

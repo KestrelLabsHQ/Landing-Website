@@ -31,6 +31,14 @@ export function SiteFooter() {
                   {item.label}
                 </Link>
               ))}
+              <a
+                href="https://www.holtr.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm text-white/72 transition-colors hover:text-white"
+              >
+                HOLTR
+              </a>
             </div>
           </div>
 

@@ -69,6 +69,20 @@ export function MobileNav() {
                     </Link>
                   );
                 })}
+                <a
+                  href="https://www.holtr.ai"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="group flex items-center justify-between border border-black/10 bg-white px-4 py-4 transition-colors hover:border-black hover:bg-black hover:text-white"
+                >
+                  <span className="text-base font-medium tracking-[-0.02em] text-black transition-colors group-hover:text-white">
+                    HOLTR
+                  </span>
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/35 transition-colors group-hover:text-white/60">
+                    06
+                  </span>
+                </a>
               </nav>
             </div>
 

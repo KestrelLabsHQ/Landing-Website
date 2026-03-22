@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
@@ -12,10 +13,10 @@ import { BlogAudioPlayer } from "@/components/blog-audio-player";
 import { BlogToc } from "@/components/blog-toc";
 import { BlogSeries } from "@/components/blog-series";
 import { authors, defaultAuthor } from "@/content/authors";
-import { extractToc, formatPostDate, getAllPosts, getPostBySlug, getPostSlugs, getPostsBySeries } from "@/lib/blog";
+import { extractToc, formatPostDate, getAllPosts, getPostBySlug, getPostsBySeries } from "@/lib/blog";
 
 export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
-  return getPostSlugs().map((slug) => ({ slug }));
+  return getAllPosts().map((post) => ({ slug: post.slug }));
 }
 
 async function resolveParams(params: unknown): Promise<{ slug?: string }> {
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: { params: unknown }): Promise
   if (!slug) return {};
 
   const { frontmatter } = getPostBySlug(slug);
+  if (frontmatter.draft) return {};
 
   return {
     title: frontmatter.title,
@@ -49,6 +51,9 @@ export default async function BlogPostPage({ params }: { params: unknown }) {
   }
 
   const { frontmatter, content, readingTimeMinutes, audioSrc } = getPostBySlug(slug);
+  if (frontmatter.draft) {
+    notFound();
+  }
 
   const author = (frontmatter.author && authors[frontmatter.author]) ? authors[frontmatter.author] : defaultAuthor;
 

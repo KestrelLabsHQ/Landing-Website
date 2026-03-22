@@ -41,6 +41,43 @@ export default function AdvancedSystemsPage() {
             </article>
           ))}
         </div>
+
+        <div className="mt-10 border border-white/10 bg-black md:mt-14">
+          <div className="grid gap-8 px-5 py-6 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:px-8 md:py-8">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/45 sm:text-xs sm:tracking-[0.24em]">
+                Product direction
+              </p>
+              <img
+                src="/holtr-banner.png"
+                alt="HOLTR"
+                className="mt-4 h-auto w-full max-w-[14rem] opacity-95"
+              />
+            </div>
+            <div>
+              <p className="text-sm leading-7 text-white/72 md:text-base">
+                HOLTR is a Kestrel Labs product effort around clearer control for systems that retrieve,
+                reason, and act — with a focus on human oversight and simplifying complex workflows.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
+                <a
+                  href="https://holtr.ai"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex min-h-11 items-center justify-center border border-white bg-white px-5 py-3 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-black transition-colors hover:bg-transparent hover:text-white"
+                >
+                  View HOLTR
+                </a>
+                <a
+                  href="/contact"
+                  className="flex min-h-11 items-center justify-center border border-white/24 px-5 py-3 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white hover:text-black"
+                >
+                  Discuss related work
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </SectionShell>
     </>
   );
