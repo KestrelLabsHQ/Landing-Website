@@ -28,14 +28,14 @@ export default function AboutPage() {
   return (
     <SectionShell
       eyebrow="About"
-      title="An engineering-led firm built for both polished delivery and deeper technical work."
-      description="Kestrel Labs is positioned between a conventional web shop and a pure R&D outfit: disciplined enough for demanding systems work, practical enough for everyday business needs."
+      title="An engineering-led firm for teams that need polished delivery without losing technical judgment."
+      description="Kestrel Labs works in the space between a conventional web shop and a pure engineering consultancy: credible on the surface, disciplined underneath, and built for practical business needs."
       className="min-h-[calc(100svh-8rem)]"
     >
       <div className="grid gap-px border border-black/10 bg-black/10 lg:grid-cols-[1.1fr_0.9fr]">
         <article className="bg-white p-5 sm:p-6 md:p-8">
           <p className="text-sm leading-7 text-black/72">
-            The firm’s approach is straightforward: understand the system, reduce unnecessary complexity, and build solutions that remain usable after the initial excitement wears off. That applies whether the work is a marketing site, an internal workflow tool, backend stabilization, or a more demanding reliability-oriented effort.
+            The approach is straightforward: understand the system, reduce unnecessary complexity, and leave behind something that is easier to operate than what came before. That applies whether the work is a marketing site, an internal workflow tool, backend stabilization, or a more demanding reliability effort.
           </p>
         </article>
         <div className="grid gap-px bg-black/10">
@@ -60,14 +60,16 @@ export default function AboutPage() {
                     Founder & Principal Engineer
                   </p>
                 </div>
-                <Image
-                  src="/founder/founder-portrait.jpg"
-                  alt="Founder of Kestrel Labs"
-                  width={1400}
-                  height={1750}
-                  className="h-auto w-full object-cover"
-                  priority
-                />
+                <div className="relative aspect-[7/8] w-full overflow-hidden bg-neutral-100">
+                  <Image
+                    src="/founder/founder-ds-update.png"
+                    alt="Founder of Kestrel Labs"
+                    fill
+                    sizes="(min-width: 1024px) 32vw, (min-width: 640px) 360px, 100vw"
+                    className="object-cover object-[62%_22%]"
+                    priority
+                  />
+                </div>
                 <div className="border-t border-black/10 bg-white/92 px-4 py-3 text-center backdrop-blur-sm">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-xs sm:tracking-[0.24em]">
                     Daymian

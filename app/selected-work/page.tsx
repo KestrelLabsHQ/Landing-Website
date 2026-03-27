@@ -55,14 +55,14 @@ export default function SelectedWorkPage() {
   return (
     <SectionShell
       eyebrow="Selected Work"
-      title="Representative engagements that show how Kestrel Labs approaches real-world delivery."
-      description="This is not a volume portfolio. It is a more useful view of the kinds of business, software, and infrastructure work Kestrel Labs is built to support."
+      title="Representative work that shows how Kestrel Labs handles real constraints and real delivery pressure."
+      description="This is not a volume portfolio. It is a more honest view of the kinds of business-facing, operational, and technical work Kestrel Labs is built to support."
       className="min-h-[calc(100svh-8rem)]"
     >
       <div className="grid gap-px border border-black/10 bg-black/10 lg:grid-cols-[1.05fr_0.95fr]">
         <article className="bg-white p-5 sm:p-6 md:p-8">
           <p className="text-sm leading-7 text-black/72">
-            Credibility in this context does not come from sounding grander than the work itself. It comes from showing clear judgment, respecting constraints, and delivering systems that hold up when they meet actual users, actual teams, and actual operating conditions.
+            Credibility here does not come from inflated claims. It comes from showing sound judgment, respecting constraints, and delivering work that continues to hold up once it meets real users, real teams, and real operating conditions.
           </p>
         </article>
         <div className="grid gap-px bg-black/10">

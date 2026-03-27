@@ -12,7 +12,7 @@ export const authors: Record<string, Author> = {
     name: "Daymian",
     title: "Founder & Principal Engineer",
     bio: "Real constraints, real systems. Build what’s useful, be clear about tradeoffs, leave things sturdier than before.",
-    avatarSrc: "/founder/founder-portrait.jpg",
+    avatarSrc: "/founder/founder-ds-update.png",
   },
 };
 

@@ -8,13 +8,15 @@ export function BlogAuthorCard({ author }: { author: Author }) {
         <div className="bg-white p-4">
           <div className="overflow-hidden rounded-md border border-black/10 bg-white">
             {author.avatarSrc ? (
-              <Image
-                src={author.avatarSrc}
-                alt={author.name}
-                width={400}
-                height={500}
-                className="h-auto w-full object-cover"
-              />
+              <div className="relative aspect-[7/8] w-full bg-neutral-100">
+                <Image
+                  src={author.avatarSrc}
+                  alt={author.name}
+                  fill
+                  sizes="160px"
+                  className="object-cover object-[62%_20%]"
+                />
+              </div>
             ) : (
               <div className="aspect-[4/5] w-full bg-neutral-100" />
             )}

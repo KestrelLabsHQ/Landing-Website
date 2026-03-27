@@ -10,8 +10,8 @@ export default function ServicesPage() {
   return (
     <SectionShell
       eyebrow="Services"
-      title="Commercially legible engineering support, built for real teams and real constraints."
-      description="Website work, internal software, engineering improvements, and infrastructure support — all delivered with a bias toward clarity, durability, and practical outcomes."
+      title="Business-facing work, internal systems, and infrastructure support held to the same engineering standard."
+      description="From websites and internal software to backend improvements and operational hardening, Kestrel Labs focuses on work that needs to be usable, understandable, and durable under real conditions."
       className="min-h-[calc(100svh-8rem)]"
     >
       <div className="grid gap-px border border-black/10 bg-black/10 lg:grid-cols-2 lg:auto-rows-fr">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandMark } from "@/components/brand-mark";
 import { BackgroundSignal } from "@/components/background-signal";
 
 type HeroProps = {
@@ -7,15 +8,22 @@ type HeroProps = {
   description: string;
   primaryCta: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
+  proofPoints?: string[];
   invert?: boolean;
 };
 
-export function Hero({ eyebrow, title, description, primaryCta, secondaryCta, invert = false }: HeroProps) {
+export function Hero({ eyebrow, title, description, primaryCta, secondaryCta, proofPoints = [], invert = false }: HeroProps) {
   return (
     <section className={invert ? "relative overflow-hidden bg-black text-white" : "relative overflow-hidden bg-white text-black"}>
       <BackgroundSignal invert={invert} className="hidden md:block" />
       <div className="mx-auto grid min-h-[64svh] max-w-7xl items-center gap-12 px-5 py-16 md:min-h-[70svh] md:grid-cols-[1.15fr_0.85fr] md:px-10 md:py-28">
         <div className="relative z-10 max-w-3xl">
+          <div className={invert ? "mb-5 inline-flex items-center gap-3 border border-white/14 bg-white/[0.03] px-3 py-2" : "mb-5 inline-flex items-center gap-3 border border-black/10 bg-white px-3 py-2"}>
+            <BrandMark className={invert ? "h-5 w-auto" : "h-5 w-auto"} invert={invert} />
+            <span className={invert ? "text-[10px] font-semibold uppercase tracking-[0.22em] text-white/54" : "text-[10px] font-semibold uppercase tracking-[0.22em] text-black/48"}>
+              Kestrel Labs LLC
+            </span>
+          </div>
           <p className={invert ? "text-[11px] font-semibold uppercase tracking-[0.24em] text-white/58 sm:text-xs sm:tracking-[0.28em]" : "text-[11px] font-semibold uppercase tracking-[0.24em] text-black/50 sm:text-xs sm:tracking-[0.28em]"}>{eyebrow}</p>
           <h1 className="mt-5 max-w-[14ch] text-4xl font-semibold tracking-[-0.06em] text-balance sm:text-5xl md:max-w-none md:text-7xl">{title}</h1>
           <p className={invert ? "mt-5 max-w-2xl text-base leading-7 text-white/74 sm:text-lg sm:leading-8" : "mt-5 max-w-2xl text-base leading-7 text-black/68 sm:text-lg sm:leading-8"}>{description}</p>
@@ -29,11 +37,33 @@ export function Hero({ eyebrow, title, description, primaryCta, secondaryCta, in
               </Link>
             ) : null}
           </div>
+          {proofPoints.length ? (
+            <div className={invert ? "mt-8 grid gap-px border border-white/12 bg-white/12 sm:grid-cols-3" : "mt-8 grid gap-px border border-black/10 bg-black/10 sm:grid-cols-3"}>
+              {proofPoints.map((item) => (
+                <div key={item} className={invert ? "bg-black px-4 py-4 text-sm leading-6 text-white/74" : "bg-white px-4 py-4 text-sm leading-6 text-black/72"}>
+                  {item}
+                </div>
+              ))}
+            </div>
+          ) : null}
         </div>
-        <div className="relative hidden min-h-[26rem] md:block">
+        <div className="relative hidden min-h-[30rem] md:block">
           <div className={invert ? "absolute right-0 top-6 h-80 w-80 border border-white/16" : "absolute right-0 top-6 h-80 w-80 border border-black/12"} />
           <div className={invert ? "absolute right-14 top-14 h-px w-96 rotate-[22deg] bg-white/25" : "absolute right-14 top-14 h-px w-96 rotate-[22deg] bg-black/18"} />
           <div className={invert ? "absolute right-16 top-44 h-px w-72 -rotate-[14deg] bg-white/14" : "absolute right-16 top-44 h-px w-72 -rotate-[14deg] bg-black/12"} />
+          <div className={invert ? "absolute right-8 top-16 w-[23rem] border border-white/14 bg-white/[0.03] px-6 py-5" : "absolute right-8 top-16 w-[23rem] border border-black/10 bg-white/92 px-6 py-5 backdrop-blur-sm"}>
+            <BrandMark className="h-14 w-auto" invert={invert} />
+            <p className={invert ? "mt-4 text-[10px] font-semibold uppercase tracking-[0.24em] text-white/48" : "mt-4 text-[10px] font-semibold uppercase tracking-[0.24em] text-black/40"}>
+              Engineering-led delivery
+            </p>
+            <div className={invert ? "mt-5 grid gap-px border border-white/12 bg-white/12" : "mt-5 grid gap-px border border-black/10 bg-black/10"}>
+              {['Credible web presence', 'Operational tooling', 'Infrastructure under load'].map((item) => (
+                <div key={item} className={invert ? "bg-black px-4 py-3 text-sm text-white/76" : "bg-white px-4 py-3 text-sm text-black/72"}>
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
           <div className={invert ? "absolute bottom-8 right-12 grid w-72 grid-cols-4 gap-3 text-[10px] uppercase tracking-[0.25em] text-white/45" : "absolute bottom-8 right-12 grid w-72 grid-cols-4 gap-3 text-[10px] uppercase tracking-[0.25em] text-black/38"}>
             <span>Signal</span><span>Trace</span><span>Control</span><span>Load</span>
           </div>

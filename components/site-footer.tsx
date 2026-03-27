@@ -7,9 +7,11 @@ export function SiteFooter() {
     <footer className="border-t border-white/10 bg-black text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 md:grid-cols-[1.15fr_0.85fr] md:px-10 md:py-14">
         <div>
-          <div className="flex items-center gap-3">
-            <BrandMark className="h-9 w-9" invert />
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/55">Kestrel Labs LLC</p>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <BrandMark className="h-9 w-auto sm:h-10 md:h-11" invert />
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/55 sm:text-xs sm:tracking-[0.24em]">
+              Kestrel Labs LLC
+            </p>
           </div>
           <p className="mt-4 max-w-xl text-sm leading-6 text-white/72">
             Founder-led engineering support for websites, internal tools, software systems, and infrastructure work that needs to hold up under real conditions.

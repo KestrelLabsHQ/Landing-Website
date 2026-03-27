@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type BrandMarkProps = {
   className?: string;
   invert?: boolean;
@@ -5,17 +7,14 @@ type BrandMarkProps = {
 
 export function BrandMark({ className, invert = false }: BrandMarkProps) {
   return (
-    <svg
-      aria-hidden
-      viewBox="0 0 40 40"
+    <Image
+      src={invert ? "/logos/KestrelLabs_White.png" : "/logos/KestrelLabs.svg"}
+      alt=""
+      aria-hidden="true"
+      width={invert ? 789 : 208}
+      height={invert ? 571 : 128}
       className={className}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect x="0.5" y="0.5" width="39" height="39" stroke={invert ? "white" : "black"} />
-      <path d="M12 9V31" stroke={invert ? "white" : "black"} strokeWidth="2" />
-      <path d="M28 9L12 22" stroke={invert ? "white" : "black"} strokeWidth="2" />
-      <path d="M17 19L29 31" stroke={invert ? "white" : "black"} strokeWidth="2" />
-    </svg>
+      unoptimized
+    />
   );
 }

@@ -27,9 +27,11 @@ export function MobileNav() {
           <div className="flex min-h-full flex-col bg-white">
             <div className="pointer-events-none absolute inset-0 opacity-60 bg-[linear-gradient(rgba(10,10,10,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(10,10,10,0.05)_1px,transparent_1px)] bg-[size:48px_48px]" />
             <div className="relative flex items-center justify-between border-b border-black/10 bg-white px-5 py-4">
-              <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.22em] text-black">
-                <BrandMark className="h-9 w-9 shrink-0" />
-                <span>Kestrel Labs</span>
+              <Link href="/" onClick={() => setOpen(false)} className="flex min-w-0 items-center gap-2.5 text-black">
+                <BrandMark className="h-8 w-auto shrink-0" />
+                <span className="truncate text-[12px] font-semibold uppercase tracking-[0.2em]">
+                  Kestrel Labs
+                </span>
               </Link>
               <button
                 type="button"
@@ -76,8 +78,37 @@ export function MobileNav() {
                   onClick={() => setOpen(false)}
                   className="group flex items-center justify-between border border-black/10 bg-white px-4 py-4 transition-colors hover:border-black hover:bg-black hover:text-white"
                 >
-                  <span className="text-base font-medium tracking-[-0.02em] text-black transition-colors group-hover:text-white">
-                    HOLTR
+                  <span className="flex items-center gap-2 text-base font-medium tracking-[-0.02em] text-black transition-colors group-hover:text-white">
+                    <span>HOLTR</span>
+                    <svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-3.5 w-3.5 opacity-55 transition-opacity group-hover:opacity-100"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M6 4H4.75C4.05964 4 3.5 4.55964 3.5 5.25V11.25C3.5 11.9404 4.05964 12.5 4.75 12.5H10.75C11.4404 12.5 12 11.9404 12 11.25V10"
+                        stroke="currentColor"
+                        strokeWidth="1.25"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M8 4H12.5V8.5"
+                        stroke="currentColor"
+                        strokeWidth="1.25"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12.25 4.25L7.5 9"
+                        stroke="currentColor"
+                        strokeWidth="1.25"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </span>
                   <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/35 transition-colors group-hover:text-white/60">
                     06

@@ -24,6 +24,16 @@ export const metadata: Metadata = {
   description:
     "Dependable digital systems for growing businesses, from polished websites and internal tools to demanding software and infrastructure work.",
   applicationName: "Kestrel Labs",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml", media: "(prefers-color-scheme: light)" },
+      { url: "/logos/KestrelLabs-icon-dark.svg", type: "image/svg+xml", media: "(prefers-color-scheme: dark)" },
+      { url: "/logos/KestrelLabs-icon-512.png", type: "image/png", sizes: "512x512", media: "(prefers-color-scheme: light)" },
+      { url: "/logos/KestrelLabs-icon-dark-512.png", type: "image/png", sizes: "512x512", media: "(prefers-color-scheme: dark)" },
+    ],
+    shortcut: ["/icon.svg"],
+    apple: [{ url: "/logos/KestrelLabs-icon-180.png", sizes: "180x180", type: "image/png" }],
+  },
   alternates: {
     canonical: "/",
   },

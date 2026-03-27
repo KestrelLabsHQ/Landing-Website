@@ -3,7 +3,7 @@ export const homeServices = [
     index: "01",
     title: "Websites",
     description:
-      "Credible marketing sites and rebuilds that help a business look established, explain itself clearly, and turn attention into qualified conversations.",
+      "Credible marketing sites and rebuilds that help a business look established, explain itself clearly, and turn attention into better-qualified conversations.",
     bullets: [
       "Sharper positioning, structure, and messaging",
       "Visual refreshes without startup-template baggage",
@@ -25,7 +25,7 @@ export const homeServices = [
     index: "03",
     title: "Software & Infrastructure",
     description:
-      "Support for systems that need sharper engineering judgment: backend improvements, stabilization work, integrations, deployment, and operational hardening.",
+      "Support for systems that need sharper engineering judgment: backend improvements, stabilization work, integrations, deployment, and operational hardening without unnecessary process overhead.",
     bullets: [
       "Untangle brittle services and recurring issues",
       "Improve reliability, observability, and control",
